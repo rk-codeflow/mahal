@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- nav here -->
+    <div class="font-nunito">
+        <div class="bg-maroon text-white py-4 px-5 sm:px-8 xs:flex xs:justify-between">
+          <div class="flex space-x-4 justify-center items-center">
+            <p class="font-bold">Download App</p>
+            <a href="https://www.apple.com/app-store/"><i class="fab fa-apple fa-lg"></i></a>
+            <a href="https://play.google.com/store/apps/?hl=en&gl=US">
+              <svg width="21" height="21" class="fill-current text-white" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_671_4)">
+                <path d="M6.99276 20.4992C6.99276 21.1835 7.45991 21.6397 8.16064 21.6397H9.32852V25.6311C9.32852 26.5435 10.146 27.3418 11.0803 27.3418C12.0147 27.3418 12.8322 26.5435 12.8322 25.6311V21.6397H15.1679V25.6311C15.1679 26.5435 15.9855 27.3418 16.9198 27.3418C17.8541 27.3418 18.6716 26.5435 18.6716 25.6311V21.6397H19.8395C20.5402 21.6397 21.0073 21.1835 21.0073 20.4992V9.09495H6.99276V20.4992ZM4.07305 9.09495C3.13875 9.09495 2.32123 9.8933 2.32123 10.8056V18.7886C2.32123 19.7009 3.13875 20.4992 4.07305 20.4992C5.00736 20.4992 5.82487 19.7009 5.82487 18.7886V10.8056C5.82487 9.89325 5.00736 9.09495 4.07305 9.09495ZM23.927 9.09495C22.9927 9.09495 22.1752 9.8933 22.1752 10.8056V18.7886C22.1752 19.7009 22.9927 20.4992 23.927 20.4992C24.8614 20.4992 25.6789 19.7009 25.6789 18.7886V10.8056C25.6789 9.89325 24.8614 9.09495 23.927 9.09495ZM18.0876 2.48047L19.6059 0.997919C19.8395 0.769833 19.8395 0.427705 19.6059 0.19962C19.3723 -0.0285107 19.0219 -0.0285107 18.7883 0.19962L17.0365 1.91026C16.219 1.34005 15.1679 1.11192 14 1.11192C12.8321 1.11192 11.781 1.34005 10.8467 1.79617L9.21169 0.085532C8.97811 -0.0285107 8.51096 -0.0285107 8.27738 0.085532C8.16059 0.313662 8.16059 0.769833 8.27738 0.997874L9.79563 2.48043C8.16059 3.7349 6.99271 5.67358 6.99271 7.95444H21.0073C21.0073 5.67367 19.8395 3.6209 18.0876 2.48047ZM11.6643 5.67367H10.4964V4.53324H11.6643V5.67367ZM17.5037 5.67367H16.3358V4.53324H17.5037V5.67367Z"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_671_4">
+                <rect width="28" height="27.3418" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </div>
+        
+          <div class="flex space-x-4 justify-center items-center  mt-4 xs:mt-0">
+            <a href="#!"><i class="fas fa-search fa-lg"></i></a>
+            <a href="#!">
+              <svg width="21" height="21" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_755_41)">
+              <path d="M30.504 19.5093V15.957C30.504 10.7749 27.0594 6.38274 22.3399 4.94816V3.33984C22.3399 1.49825 20.8417 0 19.0001 0C17.1585 0 15.6602 1.49825 15.6602 3.33984V4.94816C10.9407 6.38274 7.49618 10.7749 7.49618 15.957V19.5093C7.49618 24.0613 5.76109 28.3775 2.61058 31.6631C2.30183 31.985 2.21507 32.4601 2.39008 32.8704C2.56509 33.2807 2.96809 33.5469 3.41415 33.5469H13.5457C14.0628 36.0846 16.312 38 19.0001 38C21.6883 38 23.9373 36.0846 24.4545 33.5469H34.586C35.0321 33.5469 35.435 33.2807 35.61 32.8704C35.785 32.4601 35.6983 31.985 35.3896 31.6631C32.2391 28.3775 30.504 24.0612 30.504 19.5093ZM17.8868 3.33984C17.8868 2.72598 18.3862 2.22656 19.0001 2.22656C19.614 2.22656 20.1134 2.72598 20.1134 3.33984V4.50716C19.747 4.47183 19.3756 4.45312 19.0001 4.45312C18.6245 4.45312 18.2532 4.47183 17.8868 4.50716V3.33984ZM19.0001 35.7734C17.5487 35.7734 16.3113 34.8427 15.8517 33.5469H22.1484C21.6889 34.8427 20.4514 35.7734 19.0001 35.7734ZM5.81364 31.3203C8.34903 27.9217 9.72274 23.8088 9.72274 19.5093V15.957C9.72274 10.8415 13.8846 6.67969 19.0001 6.67969C24.1156 6.67969 28.2774 10.8415 28.2774 15.957V19.5093C28.2774 23.8088 29.6511 27.9217 32.1866 31.3203H5.81364Z" fill="white"/>
+              <path d="M33.4727 15.957C33.4727 16.5718 33.9712 17.0703 34.586 17.0703C35.2008 17.0703 35.6993 16.5718 35.6993 15.957C35.6993 11.4965 33.9623 7.30288 30.8082 4.14881C30.3735 3.71411 29.6686 3.71403 29.2338 4.14881C28.799 4.58358 28.799 5.28843 29.2338 5.72321C31.9673 8.45676 33.4727 12.0912 33.4727 15.957Z" fill="white"/>
+              <path d="M3.41406 17.0702C4.02889 17.0702 4.52734 16.5718 4.52734 15.957C4.52734 12.0912 6.0328 8.45679 8.76627 5.72324C9.20105 5.28846 9.20105 4.58361 8.76627 4.14883C8.33157 3.71406 7.62664 3.71406 7.19187 4.14883C4.0378 7.30291 2.30078 11.4964 2.30078 15.957C2.30078 16.5718 2.79923 17.0702 3.41406 17.0702Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_755_41">
+              <rect width="38" height="38" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg>
+            </a>
+            <a href="#!">
+              <svg width="34" height="21" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.7401 0H3.93178C1.76382 0 0 1.76382 0 3.93178V11.7401C0 13.9081 1.76382 15.6719 3.93178 15.6719H11.7211C13.9081 15.6719 15.6719 13.9081 15.6719 11.7401V3.93178C15.6719 1.76382 13.9081 0 11.7401 0ZM13.0156 11.7401C13.0156 12.4434 12.4434 13.0156 11.7401 13.0156H3.93178C3.22847 13.0156 2.65625 12.4434 2.65625 11.7401V3.93178C2.65625 3.22847 3.22847 2.65625 3.93178 2.65625H11.7401C12.4434 2.65625 13.0156 3.22847 13.0156 3.93178V11.7401Z" fill="white"/>
+                <path d="M30.0156 0H22.3125C20.1155 0 18.3281 1.78739 18.3281 3.98438V11.6875C18.3281 13.8845 20.1155 15.6719 22.3125 15.6719H30.0156C32.2126 15.6719 34 13.8845 34 11.6875V3.98438C34 1.78739 32.2126 0 30.0156 0ZM31.3438 11.6875C31.3438 12.4198 30.748 13.0156 30.0156 13.0156H22.3125C21.5802 13.0156 20.9844 12.4198 20.9844 11.6875V3.98438C20.9844 3.25205 21.5802 2.65625 22.3125 2.65625H30.0156C30.748 2.65625 31.3438 3.25205 31.3438 3.98438V11.6875Z" fill="white"/>
+                <path d="M11.7401 18.3281H3.93178C1.76382 18.3281 0 20.0919 0 22.2599V30.0682C0 32.2362 1.76382 34 3.93178 34H11.7401C13.9081 34 15.6719 32.2362 15.6719 30.0682V22.2599C15.6719 20.0919 13.9081 18.3281 11.7401 18.3281ZM13.0156 30.0682C13.0156 30.7715 12.4434 31.3438 11.7401 31.3438H3.93178C3.22847 31.3438 2.65625 30.7715 2.65625 30.0682V22.2599C2.65625 21.5566 3.22847 20.9844 3.93178 20.9844H11.7401C12.4434 20.9844 13.0156 21.5566 13.0156 22.2599V30.0682Z" fill="white"/>
+                <path d="M30.0156 18.3281H22.3125C20.1155 18.3281 18.3281 20.1155 18.3281 22.3125V30.0156C18.3281 32.2126 20.1155 34 22.3125 34H30.0156C32.2126 34 34 32.2126 34 30.0156V22.3125C34 20.1155 32.2126 18.3281 30.0156 18.3281ZM31.3438 30.0156C31.3438 30.748 30.748 31.3438 30.0156 31.3438H22.3125C21.5802 31.3438 20.9844 30.748 20.9844 30.0156V22.3125C20.9844 21.5802 21.5802 20.9844 22.3125 20.9844H30.0156C30.748 20.9844 31.3438 21.5802 31.3438 22.3125V30.0156Z" fill="white"/>
+              </svg>
+            </a>
+            <div class="flex items-center col-gap-2 m-lg:hidden">
+              <span class="text-white font-bold">Rs. 10,000</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        
+        <!--main nav -->
+        <!-- <nav class="py-4 px-5 sm:px-8 bg-white">
+          <div class="flex justify-between items-center">
+      
+            <div class="logo">
+              <a href="#!" class="">
+                <img src="{{asset('images/logo.png')}}" alt="this is the logo here" class="h-6 object-cover w-full">
+              </a>
+            </div>
+          
+              <div class="hidden m-lg:flex space-x-6">
+                <a href="" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Home</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Load Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Send Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Withdraw Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Contact</a>
+              </div>
+            
+              <div class="hidden m-lg:flex buttons space-x-4 items-center">
+                <button class="bg-maroon text-white py-1 px-6 text-xxs rounded login focus:outline-none">Login</button>
+                <button class="border py-1 px-6 text-maroon bg-white border-maroon text-xxs rounded hover:bg-maroon hover:text-white transition duration-500 ease-in-out register focus:outline-none">Register</button>
+              </div>
+          
+              <div class="m-lg:hidden">
+                <button class="pointer menu">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                  </svg>
+                </button>
+              </div>
+          </div>
+        
+          <div class="mobile-menu hidden lg:hidden space-y-3 text-center mt-4">
+                <a href="#!" class="block">Home</a>
+                <a href="#!" class="block">Load Money</a>
+                <a href="#!" class="block">Send Money</a>
+                <a href="#!" class="block">Withdraw Money</a>
+                <a href="#!" class="block">Contact</a>
+                <button class="bg-maroon text-white py-1 px-6 rounded inline-block text-xxs login">Login</button>
+                <button class="text-xxs rounded border py-1 px-6 text-maroon bg-white border-maroon inline-block register">Register</button>
+          </div>
+        </nav> -->
+        <!--main nav ends-->
+      
+        <!-- user profile -->
+        <nav class="py-4 px-5 sm:px-8 bg-white">
+          <div class="flex justify-between items-center">
+            <!--logo-->
+            <div class="logo">
+              <a href="#!" class="">
+                <img src="./img/logo.png" alt="this is the logo here" class="h-6 object-cover w-full">
+              </a>
+            </div>
+          
+            <!--links-->
+              <div class="hidden m-lg:flex space-x-6">
+                <a href="" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Home</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Load Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Send Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Withdraw Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Contact</a>
+              </div>
+            
+              <!--user profile-->
+              <div class="items-center col-gap-2 hidden m-lg:flex cursor-pointer">
+                <span class="text-maroon font-bold">Rs. 10,000</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="user-icon h-8 w-8 fill-current text-maroon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+                </svg>
+              </div>
+          
+              <!-- mobile menu -->
+              <div class="m-lg:hidden">
+                <button class="pointer menu">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                  </svg>
+                </button>
+              </div>
+          </div>
+        </nav>
+        <!-- user profile ends -->
+      </div>
+    <!-- nav ends -->
+
+    <!-- insurance banner -->
+    <div class="bg-news-1 bg-no-repeat bg-center bg-cover h-70 flex justify-center items-center">
+        <h4 class="text-7xl font-bold text-white">Insurance</h4>
+    </div>
+    <!-- insurance banner ends -->
+
+    <!-- insurance list -->
+    <div class="my-6 insurance-props px-5">
+        <!-- first -->
+        <div class="shadow-lg bg-white rounded-md pt-3 pb-6 px-3">
+            <img src="./img/i1.png" alt="person using his phone" class="w-full  object-cover">
+            <span class="text-semi-black pt-3 block text-xxs">Shikhar Insurance</span>
+            <!-- icons -->
+            <div class="flex justify-between py-3">
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_35)">
+                        <path d="M3.86889 9.1015L6.05893 7.83763C6.1994 7.75664 6.36913 7.54098 6.41486 7.3854L7.0932 5.07737C7.11006 5.01963 7.13563 4.96809 7.16702 4.92275C7.26564 4.74139 7.45572 4.61816 7.67602 4.61816L10.5717 4.74314C10.6986 4.74856 10.8166 4.79661 10.9133 4.87625C10.9327 4.88807 10.9528 4.8995 10.9703 4.91287L12.9379 6.43037C13.1651 6.60572 13.2924 6.96223 13.2273 7.24182L12.4482 10.5938C12.3833 10.8736 12.1156 11.0848 11.8259 11.0848C11.8063 11.0848 11.7866 11.0838 11.767 11.0819L11.4762 11.0528C11.3204 11.0371 11.1797 10.9581 11.0906 10.8356C11.0013 10.7132 10.9689 10.5551 11.0017 10.402L11.5556 7.81438C11.5847 7.67855 11.511 7.47763 11.401 7.39295L11.0505 7.12305L10.8703 11.278C10.8701 11.2824 10.8687 11.2865 10.8684 11.291L11.6682 13.065C11.7689 13.2884 12.022 13.5978 12.2208 13.741L14.096 15.0911C14.398 15.3085 14.5121 15.7433 14.356 16.0812L14.0994 16.6355C13.9971 16.8566 13.792 16.994 13.5637 16.994C13.4331 16.994 13.3047 16.9496 13.1923 16.8661L10.7165 15.0225C10.4698 14.8388 10.1656 14.4814 10.024 14.2083L8.78799 11.8279C8.77811 11.8087 8.77191 11.7881 8.76377 11.7682L8.67755 11.7645L6.65453 17.342C6.51174 17.7357 6.13081 18.0004 5.70668 18.0004C5.60592 18.0004 5.50633 17.9851 5.41062 17.9546L5.28584 17.9149C5.0386 17.8364 4.84 17.6665 4.72646 17.4363C4.61311 17.2062 4.59936 16.945 4.68771 16.7012L6.81807 10.8283C6.82795 10.8011 6.84151 10.7763 6.85333 10.7506L6.92173 9.17455L4.57301 10.3946C4.49047 10.4376 4.39746 10.4603 4.30388 10.4603C4.08648 10.4603 3.88749 10.3427 3.78461 10.1534L3.64491 9.8961C3.49301 9.61689 3.59356 9.26038 3.86889 9.1015Z" fill="#B40043"/>
+                        <path d="M9.44317 4.19935C9.41275 4.19935 9.38194 4.19877 9.35113 4.19741C8.79098 4.17319 8.27365 3.93197 7.89466 3.51868C7.51567 3.1054 7.32037 2.56908 7.34459 2.00893C7.39458 0.852011 8.36142 -0.0481827 9.53307 0.00200032C10.0932 0.0262199 10.6106 0.267447 10.9895 0.68073C11.3685 1.09421 11.5638 1.63033 11.5396 2.19048C11.4908 3.31698 10.5699 4.19935 9.44317 4.19935Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_35">
+                        <rect width="18" height="18" fill="white" transform="matrix(-1 0 0 1 18 0)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">2.8 Km</span>
+                </div>
+
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_41)">
+                        <path d="M14.3289 3.08241C13.2365 1.19719 11.2962 0.0454394 9.13846 0.00142383C9.04635 -0.000474609 8.95364 -0.000474609 8.8615 0.00142383C6.70382 0.0454394 4.76348 1.19719 3.67103 3.08241C2.5544 5.0094 2.52385 7.32408 3.58929 9.27423L8.05284 17.4441C8.05484 17.4477 8.05684 17.4513 8.05892 17.4549C8.2553 17.7962 8.60711 18 9.00005 18C9.39296 18 9.74476 17.7962 9.94111 17.4549C9.94319 17.4513 9.94519 17.4477 9.94719 17.4441L14.4107 9.27423C15.4761 7.32408 15.4456 5.0094 14.3289 3.08241ZM8.99998 8.15627C7.60424 8.15627 6.46873 7.02076 6.46873 5.62502C6.46873 4.22928 7.60424 3.09377 8.99998 3.09377C10.3957 3.09377 11.5312 4.22928 11.5312 5.62502C11.5312 7.02076 10.3958 8.15627 8.99998 8.15627Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_41">
+                        <rect width="18" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">Kathmandu, Nepal</span>
+                </div>
+            </div>
+
+            <!-- stars -->
+            <div class="flex items-center col-gap-2 mb-5">
+                <button class="bg-maroon text-white p-xs rounded text-xxs">4.5</button>
+                <ul class="flex justify-center">
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#!" class="text-xxs rounded border py-1 px-3 text-maroon bg-white border-maroon mb-4 font-bold hover:bg-maroon hover:text-white transition duration-500 ease-in-out">View Details</a>
+        </div>
+
+        <!-- second -->
+        <div class="shadow-lg bg-white rounded-md pt-3 pb-6 px-3">
+            <img src="./img/i2.png" alt="person using his phone" class="w-full  object-cover">
+            <span class="text-semi-black pt-3 block text-xxs">Shikhar Insurance</span>
+            <!-- icons -->
+            <div class="flex justify-between py-3">
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_35)">
+                        <path d="M3.86889 9.1015L6.05893 7.83763C6.1994 7.75664 6.36913 7.54098 6.41486 7.3854L7.0932 5.07737C7.11006 5.01963 7.13563 4.96809 7.16702 4.92275C7.26564 4.74139 7.45572 4.61816 7.67602 4.61816L10.5717 4.74314C10.6986 4.74856 10.8166 4.79661 10.9133 4.87625C10.9327 4.88807 10.9528 4.8995 10.9703 4.91287L12.9379 6.43037C13.1651 6.60572 13.2924 6.96223 13.2273 7.24182L12.4482 10.5938C12.3833 10.8736 12.1156 11.0848 11.8259 11.0848C11.8063 11.0848 11.7866 11.0838 11.767 11.0819L11.4762 11.0528C11.3204 11.0371 11.1797 10.9581 11.0906 10.8356C11.0013 10.7132 10.9689 10.5551 11.0017 10.402L11.5556 7.81438C11.5847 7.67855 11.511 7.47763 11.401 7.39295L11.0505 7.12305L10.8703 11.278C10.8701 11.2824 10.8687 11.2865 10.8684 11.291L11.6682 13.065C11.7689 13.2884 12.022 13.5978 12.2208 13.741L14.096 15.0911C14.398 15.3085 14.5121 15.7433 14.356 16.0812L14.0994 16.6355C13.9971 16.8566 13.792 16.994 13.5637 16.994C13.4331 16.994 13.3047 16.9496 13.1923 16.8661L10.7165 15.0225C10.4698 14.8388 10.1656 14.4814 10.024 14.2083L8.78799 11.8279C8.77811 11.8087 8.77191 11.7881 8.76377 11.7682L8.67755 11.7645L6.65453 17.342C6.51174 17.7357 6.13081 18.0004 5.70668 18.0004C5.60592 18.0004 5.50633 17.9851 5.41062 17.9546L5.28584 17.9149C5.0386 17.8364 4.84 17.6665 4.72646 17.4363C4.61311 17.2062 4.59936 16.945 4.68771 16.7012L6.81807 10.8283C6.82795 10.8011 6.84151 10.7763 6.85333 10.7506L6.92173 9.17455L4.57301 10.3946C4.49047 10.4376 4.39746 10.4603 4.30388 10.4603C4.08648 10.4603 3.88749 10.3427 3.78461 10.1534L3.64491 9.8961C3.49301 9.61689 3.59356 9.26038 3.86889 9.1015Z" fill="#B40043"/>
+                        <path d="M9.44317 4.19935C9.41275 4.19935 9.38194 4.19877 9.35113 4.19741C8.79098 4.17319 8.27365 3.93197 7.89466 3.51868C7.51567 3.1054 7.32037 2.56908 7.34459 2.00893C7.39458 0.852011 8.36142 -0.0481827 9.53307 0.00200032C10.0932 0.0262199 10.6106 0.267447 10.9895 0.68073C11.3685 1.09421 11.5638 1.63033 11.5396 2.19048C11.4908 3.31698 10.5699 4.19935 9.44317 4.19935Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_35">
+                        <rect width="18" height="18" fill="white" transform="matrix(-1 0 0 1 18 0)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">2.8 Km</span>
+                </div>
+
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_41)">
+                        <path d="M14.3289 3.08241C13.2365 1.19719 11.2962 0.0454394 9.13846 0.00142383C9.04635 -0.000474609 8.95364 -0.000474609 8.8615 0.00142383C6.70382 0.0454394 4.76348 1.19719 3.67103 3.08241C2.5544 5.0094 2.52385 7.32408 3.58929 9.27423L8.05284 17.4441C8.05484 17.4477 8.05684 17.4513 8.05892 17.4549C8.2553 17.7962 8.60711 18 9.00005 18C9.39296 18 9.74476 17.7962 9.94111 17.4549C9.94319 17.4513 9.94519 17.4477 9.94719 17.4441L14.4107 9.27423C15.4761 7.32408 15.4456 5.0094 14.3289 3.08241ZM8.99998 8.15627C7.60424 8.15627 6.46873 7.02076 6.46873 5.62502C6.46873 4.22928 7.60424 3.09377 8.99998 3.09377C10.3957 3.09377 11.5312 4.22928 11.5312 5.62502C11.5312 7.02076 10.3958 8.15627 8.99998 8.15627Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_41">
+                        <rect width="18" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">Kathmandu, Nepal</span>
+                </div>
+            </div>
+
+            <!-- stars -->
+            <div class="flex items-center col-gap-2 mb-5">
+                <button class="bg-maroon text-white p-xs rounded text-xxs">4.5</button>
+                <ul class="flex justify-center">
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#!" class="text-xxs rounded border py-1 px-3 text-maroon bg-white border-maroon mb-4 font-bold hover:bg-maroon hover:text-white transition duration-500 ease-in-out">View Details</a>
+        </div>
+
+        <!-- third -->
+        <div class="shadow-lg bg-white rounded-md pt-3 pb-6 px-3">
+            <img src="./img/i3.png" alt="person using his phone" class="w-full  object-cover">
+            <span class="text-semi-black pt-3 block text-xxs">Shikhar Insurance</span>
+            <!-- icons -->
+            <div class="flex justify-between py-3">
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_35)">
+                        <path d="M3.86889 9.1015L6.05893 7.83763C6.1994 7.75664 6.36913 7.54098 6.41486 7.3854L7.0932 5.07737C7.11006 5.01963 7.13563 4.96809 7.16702 4.92275C7.26564 4.74139 7.45572 4.61816 7.67602 4.61816L10.5717 4.74314C10.6986 4.74856 10.8166 4.79661 10.9133 4.87625C10.9327 4.88807 10.9528 4.8995 10.9703 4.91287L12.9379 6.43037C13.1651 6.60572 13.2924 6.96223 13.2273 7.24182L12.4482 10.5938C12.3833 10.8736 12.1156 11.0848 11.8259 11.0848C11.8063 11.0848 11.7866 11.0838 11.767 11.0819L11.4762 11.0528C11.3204 11.0371 11.1797 10.9581 11.0906 10.8356C11.0013 10.7132 10.9689 10.5551 11.0017 10.402L11.5556 7.81438C11.5847 7.67855 11.511 7.47763 11.401 7.39295L11.0505 7.12305L10.8703 11.278C10.8701 11.2824 10.8687 11.2865 10.8684 11.291L11.6682 13.065C11.7689 13.2884 12.022 13.5978 12.2208 13.741L14.096 15.0911C14.398 15.3085 14.5121 15.7433 14.356 16.0812L14.0994 16.6355C13.9971 16.8566 13.792 16.994 13.5637 16.994C13.4331 16.994 13.3047 16.9496 13.1923 16.8661L10.7165 15.0225C10.4698 14.8388 10.1656 14.4814 10.024 14.2083L8.78799 11.8279C8.77811 11.8087 8.77191 11.7881 8.76377 11.7682L8.67755 11.7645L6.65453 17.342C6.51174 17.7357 6.13081 18.0004 5.70668 18.0004C5.60592 18.0004 5.50633 17.9851 5.41062 17.9546L5.28584 17.9149C5.0386 17.8364 4.84 17.6665 4.72646 17.4363C4.61311 17.2062 4.59936 16.945 4.68771 16.7012L6.81807 10.8283C6.82795 10.8011 6.84151 10.7763 6.85333 10.7506L6.92173 9.17455L4.57301 10.3946C4.49047 10.4376 4.39746 10.4603 4.30388 10.4603C4.08648 10.4603 3.88749 10.3427 3.78461 10.1534L3.64491 9.8961C3.49301 9.61689 3.59356 9.26038 3.86889 9.1015Z" fill="#B40043"/>
+                        <path d="M9.44317 4.19935C9.41275 4.19935 9.38194 4.19877 9.35113 4.19741C8.79098 4.17319 8.27365 3.93197 7.89466 3.51868C7.51567 3.1054 7.32037 2.56908 7.34459 2.00893C7.39458 0.852011 8.36142 -0.0481827 9.53307 0.00200032C10.0932 0.0262199 10.6106 0.267447 10.9895 0.68073C11.3685 1.09421 11.5638 1.63033 11.5396 2.19048C11.4908 3.31698 10.5699 4.19935 9.44317 4.19935Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_35">
+                        <rect width="18" height="18" fill="white" transform="matrix(-1 0 0 1 18 0)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">2.8 Km</span>
+                </div>
+
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_41)">
+                        <path d="M14.3289 3.08241C13.2365 1.19719 11.2962 0.0454394 9.13846 0.00142383C9.04635 -0.000474609 8.95364 -0.000474609 8.8615 0.00142383C6.70382 0.0454394 4.76348 1.19719 3.67103 3.08241C2.5544 5.0094 2.52385 7.32408 3.58929 9.27423L8.05284 17.4441C8.05484 17.4477 8.05684 17.4513 8.05892 17.4549C8.2553 17.7962 8.60711 18 9.00005 18C9.39296 18 9.74476 17.7962 9.94111 17.4549C9.94319 17.4513 9.94519 17.4477 9.94719 17.4441L14.4107 9.27423C15.4761 7.32408 15.4456 5.0094 14.3289 3.08241ZM8.99998 8.15627C7.60424 8.15627 6.46873 7.02076 6.46873 5.62502C6.46873 4.22928 7.60424 3.09377 8.99998 3.09377C10.3957 3.09377 11.5312 4.22928 11.5312 5.62502C11.5312 7.02076 10.3958 8.15627 8.99998 8.15627Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_41">
+                        <rect width="18" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">Kathmandu, Nepal</span>
+                </div>
+            </div>
+
+            <!-- stars -->
+            <div class="flex items-center col-gap-2 mb-5">
+                <button class="bg-maroon text-white p-xs rounded text-xxs">4.5</button>
+                <ul class="flex justify-center">
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#!" class="text-xxs rounded border py-1 px-3 text-maroon bg-white border-maroon mb-4 font-bold hover:bg-maroon hover:text-white transition duration-500 ease-in-out">View Details</a>
+        </div>
+
+        <!-- fourth -->
+        <div class="shadow-lg bg-white rounded-md pt-3 pb-6 px-3">
+            <img src="./img/i4.png" alt="person using his phone" class="w-full  object-cover">
+            <span class="text-semi-black pt-3 block text-xxs">Shikhar Insurance</span>
+            <!-- icons -->
+            <div class="flex justify-between py-3">
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_35)">
+                        <path d="M3.86889 9.1015L6.05893 7.83763C6.1994 7.75664 6.36913 7.54098 6.41486 7.3854L7.0932 5.07737C7.11006 5.01963 7.13563 4.96809 7.16702 4.92275C7.26564 4.74139 7.45572 4.61816 7.67602 4.61816L10.5717 4.74314C10.6986 4.74856 10.8166 4.79661 10.9133 4.87625C10.9327 4.88807 10.9528 4.8995 10.9703 4.91287L12.9379 6.43037C13.1651 6.60572 13.2924 6.96223 13.2273 7.24182L12.4482 10.5938C12.3833 10.8736 12.1156 11.0848 11.8259 11.0848C11.8063 11.0848 11.7866 11.0838 11.767 11.0819L11.4762 11.0528C11.3204 11.0371 11.1797 10.9581 11.0906 10.8356C11.0013 10.7132 10.9689 10.5551 11.0017 10.402L11.5556 7.81438C11.5847 7.67855 11.511 7.47763 11.401 7.39295L11.0505 7.12305L10.8703 11.278C10.8701 11.2824 10.8687 11.2865 10.8684 11.291L11.6682 13.065C11.7689 13.2884 12.022 13.5978 12.2208 13.741L14.096 15.0911C14.398 15.3085 14.5121 15.7433 14.356 16.0812L14.0994 16.6355C13.9971 16.8566 13.792 16.994 13.5637 16.994C13.4331 16.994 13.3047 16.9496 13.1923 16.8661L10.7165 15.0225C10.4698 14.8388 10.1656 14.4814 10.024 14.2083L8.78799 11.8279C8.77811 11.8087 8.77191 11.7881 8.76377 11.7682L8.67755 11.7645L6.65453 17.342C6.51174 17.7357 6.13081 18.0004 5.70668 18.0004C5.60592 18.0004 5.50633 17.9851 5.41062 17.9546L5.28584 17.9149C5.0386 17.8364 4.84 17.6665 4.72646 17.4363C4.61311 17.2062 4.59936 16.945 4.68771 16.7012L6.81807 10.8283C6.82795 10.8011 6.84151 10.7763 6.85333 10.7506L6.92173 9.17455L4.57301 10.3946C4.49047 10.4376 4.39746 10.4603 4.30388 10.4603C4.08648 10.4603 3.88749 10.3427 3.78461 10.1534L3.64491 9.8961C3.49301 9.61689 3.59356 9.26038 3.86889 9.1015Z" fill="#B40043"/>
+                        <path d="M9.44317 4.19935C9.41275 4.19935 9.38194 4.19877 9.35113 4.19741C8.79098 4.17319 8.27365 3.93197 7.89466 3.51868C7.51567 3.1054 7.32037 2.56908 7.34459 2.00893C7.39458 0.852011 8.36142 -0.0481827 9.53307 0.00200032C10.0932 0.0262199 10.6106 0.267447 10.9895 0.68073C11.3685 1.09421 11.5638 1.63033 11.5396 2.19048C11.4908 3.31698 10.5699 4.19935 9.44317 4.19935Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_35">
+                        <rect width="18" height="18" fill="white" transform="matrix(-1 0 0 1 18 0)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">2.8 Km</span>
+                </div>
+
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_41)">
+                        <path d="M14.3289 3.08241C13.2365 1.19719 11.2962 0.0454394 9.13846 0.00142383C9.04635 -0.000474609 8.95364 -0.000474609 8.8615 0.00142383C6.70382 0.0454394 4.76348 1.19719 3.67103 3.08241C2.5544 5.0094 2.52385 7.32408 3.58929 9.27423L8.05284 17.4441C8.05484 17.4477 8.05684 17.4513 8.05892 17.4549C8.2553 17.7962 8.60711 18 9.00005 18C9.39296 18 9.74476 17.7962 9.94111 17.4549C9.94319 17.4513 9.94519 17.4477 9.94719 17.4441L14.4107 9.27423C15.4761 7.32408 15.4456 5.0094 14.3289 3.08241ZM8.99998 8.15627C7.60424 8.15627 6.46873 7.02076 6.46873 5.62502C6.46873 4.22928 7.60424 3.09377 8.99998 3.09377C10.3957 3.09377 11.5312 4.22928 11.5312 5.62502C11.5312 7.02076 10.3958 8.15627 8.99998 8.15627Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_41">
+                        <rect width="18" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">Kathmandu, Nepal</span>
+                </div>
+            </div>
+
+            <!-- stars -->
+            <div class="flex items-center col-gap-2 mb-5">
+                <button class="bg-maroon text-white p-xs rounded text-xxs">4.5</button>
+                <ul class="flex justify-center">
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#!" class="text-xxs rounded border py-1 px-3 text-maroon bg-white border-maroon mb-4 font-bold hover:bg-maroon hover:text-white transition duration-500 ease-in-out">View Details</a>
+        </div>
+
+        <!--fifth-->
+        <div class="shadow-lg bg-white rounded-md pt-3 pb-6 px-3">
+            <img src="./img/i1.png" alt="person using his phone" class="w-full  object-cover">
+            <span class="text-semi-black pt-3 block text-xxs">Shikhar Insurance</span>
+            <!-- icons -->
+            <div class="flex justify-between py-3">
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_35)">
+                        <path d="M3.86889 9.1015L6.05893 7.83763C6.1994 7.75664 6.36913 7.54098 6.41486 7.3854L7.0932 5.07737C7.11006 5.01963 7.13563 4.96809 7.16702 4.92275C7.26564 4.74139 7.45572 4.61816 7.67602 4.61816L10.5717 4.74314C10.6986 4.74856 10.8166 4.79661 10.9133 4.87625C10.9327 4.88807 10.9528 4.8995 10.9703 4.91287L12.9379 6.43037C13.1651 6.60572 13.2924 6.96223 13.2273 7.24182L12.4482 10.5938C12.3833 10.8736 12.1156 11.0848 11.8259 11.0848C11.8063 11.0848 11.7866 11.0838 11.767 11.0819L11.4762 11.0528C11.3204 11.0371 11.1797 10.9581 11.0906 10.8356C11.0013 10.7132 10.9689 10.5551 11.0017 10.402L11.5556 7.81438C11.5847 7.67855 11.511 7.47763 11.401 7.39295L11.0505 7.12305L10.8703 11.278C10.8701 11.2824 10.8687 11.2865 10.8684 11.291L11.6682 13.065C11.7689 13.2884 12.022 13.5978 12.2208 13.741L14.096 15.0911C14.398 15.3085 14.5121 15.7433 14.356 16.0812L14.0994 16.6355C13.9971 16.8566 13.792 16.994 13.5637 16.994C13.4331 16.994 13.3047 16.9496 13.1923 16.8661L10.7165 15.0225C10.4698 14.8388 10.1656 14.4814 10.024 14.2083L8.78799 11.8279C8.77811 11.8087 8.77191 11.7881 8.76377 11.7682L8.67755 11.7645L6.65453 17.342C6.51174 17.7357 6.13081 18.0004 5.70668 18.0004C5.60592 18.0004 5.50633 17.9851 5.41062 17.9546L5.28584 17.9149C5.0386 17.8364 4.84 17.6665 4.72646 17.4363C4.61311 17.2062 4.59936 16.945 4.68771 16.7012L6.81807 10.8283C6.82795 10.8011 6.84151 10.7763 6.85333 10.7506L6.92173 9.17455L4.57301 10.3946C4.49047 10.4376 4.39746 10.4603 4.30388 10.4603C4.08648 10.4603 3.88749 10.3427 3.78461 10.1534L3.64491 9.8961C3.49301 9.61689 3.59356 9.26038 3.86889 9.1015Z" fill="#B40043"/>
+                        <path d="M9.44317 4.19935C9.41275 4.19935 9.38194 4.19877 9.35113 4.19741C8.79098 4.17319 8.27365 3.93197 7.89466 3.51868C7.51567 3.1054 7.32037 2.56908 7.34459 2.00893C7.39458 0.852011 8.36142 -0.0481827 9.53307 0.00200032C10.0932 0.0262199 10.6106 0.267447 10.9895 0.68073C11.3685 1.09421 11.5638 1.63033 11.5396 2.19048C11.4908 3.31698 10.5699 4.19935 9.44317 4.19935Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_35">
+                        <rect width="18" height="18" fill="white" transform="matrix(-1 0 0 1 18 0)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">2.8 Km</span>
+                </div>
+
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_41)">
+                        <path d="M14.3289 3.08241C13.2365 1.19719 11.2962 0.0454394 9.13846 0.00142383C9.04635 -0.000474609 8.95364 -0.000474609 8.8615 0.00142383C6.70382 0.0454394 4.76348 1.19719 3.67103 3.08241C2.5544 5.0094 2.52385 7.32408 3.58929 9.27423L8.05284 17.4441C8.05484 17.4477 8.05684 17.4513 8.05892 17.4549C8.2553 17.7962 8.60711 18 9.00005 18C9.39296 18 9.74476 17.7962 9.94111 17.4549C9.94319 17.4513 9.94519 17.4477 9.94719 17.4441L14.4107 9.27423C15.4761 7.32408 15.4456 5.0094 14.3289 3.08241ZM8.99998 8.15627C7.60424 8.15627 6.46873 7.02076 6.46873 5.62502C6.46873 4.22928 7.60424 3.09377 8.99998 3.09377C10.3957 3.09377 11.5312 4.22928 11.5312 5.62502C11.5312 7.02076 10.3958 8.15627 8.99998 8.15627Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_41">
+                        <rect width="18" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">Kathmandu, Nepal</span>
+                </div>
+            </div>
+
+            <!-- stars -->
+            <div class="flex items-center col-gap-2 mb-5">
+                <button class="bg-maroon text-white p-xs rounded text-xxs">4.5</button>
+                <ul class="flex justify-center">
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#!" class="text-xxs rounded border py-1 px-3 text-maroon bg-white border-maroon mb-4 font-bold hover:bg-maroon hover:text-white transition duration-500 ease-in-out">View Details</a>
+        </div>
+
+        <!-- sixth -->
+        <div class="shadow-lg bg-white rounded-md pt-3 pb-6 px-3">
+            <img src="./img/i2.png" alt="person using his phone" class="w-full  object-cover">
+            <span class="text-semi-black pt-3 block text-xxs">Shikhar Insurance</span>
+            <!-- icons -->
+            <div class="flex justify-between py-3">
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_35)">
+                        <path d="M3.86889 9.1015L6.05893 7.83763C6.1994 7.75664 6.36913 7.54098 6.41486 7.3854L7.0932 5.07737C7.11006 5.01963 7.13563 4.96809 7.16702 4.92275C7.26564 4.74139 7.45572 4.61816 7.67602 4.61816L10.5717 4.74314C10.6986 4.74856 10.8166 4.79661 10.9133 4.87625C10.9327 4.88807 10.9528 4.8995 10.9703 4.91287L12.9379 6.43037C13.1651 6.60572 13.2924 6.96223 13.2273 7.24182L12.4482 10.5938C12.3833 10.8736 12.1156 11.0848 11.8259 11.0848C11.8063 11.0848 11.7866 11.0838 11.767 11.0819L11.4762 11.0528C11.3204 11.0371 11.1797 10.9581 11.0906 10.8356C11.0013 10.7132 10.9689 10.5551 11.0017 10.402L11.5556 7.81438C11.5847 7.67855 11.511 7.47763 11.401 7.39295L11.0505 7.12305L10.8703 11.278C10.8701 11.2824 10.8687 11.2865 10.8684 11.291L11.6682 13.065C11.7689 13.2884 12.022 13.5978 12.2208 13.741L14.096 15.0911C14.398 15.3085 14.5121 15.7433 14.356 16.0812L14.0994 16.6355C13.9971 16.8566 13.792 16.994 13.5637 16.994C13.4331 16.994 13.3047 16.9496 13.1923 16.8661L10.7165 15.0225C10.4698 14.8388 10.1656 14.4814 10.024 14.2083L8.78799 11.8279C8.77811 11.8087 8.77191 11.7881 8.76377 11.7682L8.67755 11.7645L6.65453 17.342C6.51174 17.7357 6.13081 18.0004 5.70668 18.0004C5.60592 18.0004 5.50633 17.9851 5.41062 17.9546L5.28584 17.9149C5.0386 17.8364 4.84 17.6665 4.72646 17.4363C4.61311 17.2062 4.59936 16.945 4.68771 16.7012L6.81807 10.8283C6.82795 10.8011 6.84151 10.7763 6.85333 10.7506L6.92173 9.17455L4.57301 10.3946C4.49047 10.4376 4.39746 10.4603 4.30388 10.4603C4.08648 10.4603 3.88749 10.3427 3.78461 10.1534L3.64491 9.8961C3.49301 9.61689 3.59356 9.26038 3.86889 9.1015Z" fill="#B40043"/>
+                        <path d="M9.44317 4.19935C9.41275 4.19935 9.38194 4.19877 9.35113 4.19741C8.79098 4.17319 8.27365 3.93197 7.89466 3.51868C7.51567 3.1054 7.32037 2.56908 7.34459 2.00893C7.39458 0.852011 8.36142 -0.0481827 9.53307 0.00200032C10.0932 0.0262199 10.6106 0.267447 10.9895 0.68073C11.3685 1.09421 11.5638 1.63033 11.5396 2.19048C11.4908 3.31698 10.5699 4.19935 9.44317 4.19935Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_35">
+                        <rect width="18" height="18" fill="white" transform="matrix(-1 0 0 1 18 0)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">2.8 Km</span>
+                </div>
+
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_41)">
+                        <path d="M14.3289 3.08241C13.2365 1.19719 11.2962 0.0454394 9.13846 0.00142383C9.04635 -0.000474609 8.95364 -0.000474609 8.8615 0.00142383C6.70382 0.0454394 4.76348 1.19719 3.67103 3.08241C2.5544 5.0094 2.52385 7.32408 3.58929 9.27423L8.05284 17.4441C8.05484 17.4477 8.05684 17.4513 8.05892 17.4549C8.2553 17.7962 8.60711 18 9.00005 18C9.39296 18 9.74476 17.7962 9.94111 17.4549C9.94319 17.4513 9.94519 17.4477 9.94719 17.4441L14.4107 9.27423C15.4761 7.32408 15.4456 5.0094 14.3289 3.08241ZM8.99998 8.15627C7.60424 8.15627 6.46873 7.02076 6.46873 5.62502C6.46873 4.22928 7.60424 3.09377 8.99998 3.09377C10.3957 3.09377 11.5312 4.22928 11.5312 5.62502C11.5312 7.02076 10.3958 8.15627 8.99998 8.15627Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_41">
+                        <rect width="18" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">Kathmandu, Nepal</span>
+                </div>
+            </div>
+
+            <!-- stars -->
+            <div class="flex items-center col-gap-2 mb-5">
+                <button class="bg-maroon text-white p-xs rounded text-xxs">4.5</button>
+                <ul class="flex justify-center">
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#!" class="text-xxs rounded border py-1 px-3 text-maroon bg-white border-maroon mb-4 font-bold hover:bg-maroon hover:text-white transition duration-500 ease-in-out">View Details</a>
+        </div>
+
+        <!-- seventh -->
+        <div class="shadow-lg bg-white rounded-md pt-3 pb-6 px-3">
+            <img src="./img/i3.png" alt="person using his phone" class="w-full  object-cover">
+            <span class="text-semi-black pt-3 block text-xxs">Shikhar Insurance</span>
+            <!-- icons -->
+            <div class="flex justify-between py-3">
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_35)">
+                        <path d="M3.86889 9.1015L6.05893 7.83763C6.1994 7.75664 6.36913 7.54098 6.41486 7.3854L7.0932 5.07737C7.11006 5.01963 7.13563 4.96809 7.16702 4.92275C7.26564 4.74139 7.45572 4.61816 7.67602 4.61816L10.5717 4.74314C10.6986 4.74856 10.8166 4.79661 10.9133 4.87625C10.9327 4.88807 10.9528 4.8995 10.9703 4.91287L12.9379 6.43037C13.1651 6.60572 13.2924 6.96223 13.2273 7.24182L12.4482 10.5938C12.3833 10.8736 12.1156 11.0848 11.8259 11.0848C11.8063 11.0848 11.7866 11.0838 11.767 11.0819L11.4762 11.0528C11.3204 11.0371 11.1797 10.9581 11.0906 10.8356C11.0013 10.7132 10.9689 10.5551 11.0017 10.402L11.5556 7.81438C11.5847 7.67855 11.511 7.47763 11.401 7.39295L11.0505 7.12305L10.8703 11.278C10.8701 11.2824 10.8687 11.2865 10.8684 11.291L11.6682 13.065C11.7689 13.2884 12.022 13.5978 12.2208 13.741L14.096 15.0911C14.398 15.3085 14.5121 15.7433 14.356 16.0812L14.0994 16.6355C13.9971 16.8566 13.792 16.994 13.5637 16.994C13.4331 16.994 13.3047 16.9496 13.1923 16.8661L10.7165 15.0225C10.4698 14.8388 10.1656 14.4814 10.024 14.2083L8.78799 11.8279C8.77811 11.8087 8.77191 11.7881 8.76377 11.7682L8.67755 11.7645L6.65453 17.342C6.51174 17.7357 6.13081 18.0004 5.70668 18.0004C5.60592 18.0004 5.50633 17.9851 5.41062 17.9546L5.28584 17.9149C5.0386 17.8364 4.84 17.6665 4.72646 17.4363C4.61311 17.2062 4.59936 16.945 4.68771 16.7012L6.81807 10.8283C6.82795 10.8011 6.84151 10.7763 6.85333 10.7506L6.92173 9.17455L4.57301 10.3946C4.49047 10.4376 4.39746 10.4603 4.30388 10.4603C4.08648 10.4603 3.88749 10.3427 3.78461 10.1534L3.64491 9.8961C3.49301 9.61689 3.59356 9.26038 3.86889 9.1015Z" fill="#B40043"/>
+                        <path d="M9.44317 4.19935C9.41275 4.19935 9.38194 4.19877 9.35113 4.19741C8.79098 4.17319 8.27365 3.93197 7.89466 3.51868C7.51567 3.1054 7.32037 2.56908 7.34459 2.00893C7.39458 0.852011 8.36142 -0.0481827 9.53307 0.00200032C10.0932 0.0262199 10.6106 0.267447 10.9895 0.68073C11.3685 1.09421 11.5638 1.63033 11.5396 2.19048C11.4908 3.31698 10.5699 4.19935 9.44317 4.19935Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_35">
+                        <rect width="18" height="18" fill="white" transform="matrix(-1 0 0 1 18 0)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">2.8 Km</span>
+                </div>
+
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_41)">
+                        <path d="M14.3289 3.08241C13.2365 1.19719 11.2962 0.0454394 9.13846 0.00142383C9.04635 -0.000474609 8.95364 -0.000474609 8.8615 0.00142383C6.70382 0.0454394 4.76348 1.19719 3.67103 3.08241C2.5544 5.0094 2.52385 7.32408 3.58929 9.27423L8.05284 17.4441C8.05484 17.4477 8.05684 17.4513 8.05892 17.4549C8.2553 17.7962 8.60711 18 9.00005 18C9.39296 18 9.74476 17.7962 9.94111 17.4549C9.94319 17.4513 9.94519 17.4477 9.94719 17.4441L14.4107 9.27423C15.4761 7.32408 15.4456 5.0094 14.3289 3.08241ZM8.99998 8.15627C7.60424 8.15627 6.46873 7.02076 6.46873 5.62502C6.46873 4.22928 7.60424 3.09377 8.99998 3.09377C10.3957 3.09377 11.5312 4.22928 11.5312 5.62502C11.5312 7.02076 10.3958 8.15627 8.99998 8.15627Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_41">
+                        <rect width="18" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">Kathmandu, Nepal</span>
+                </div>
+            </div>
+
+            <!-- stars -->
+            <div class="flex items-center col-gap-2 mb-5">
+                <button class="bg-maroon text-white p-xs rounded text-xxs">4.5</button>
+                <ul class="flex justify-center">
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#!" class="text-xxs rounded border py-1 px-3 text-maroon bg-white border-maroon mb-4 font-bold hover:bg-maroon hover:text-white transition duration-500 ease-in-out">View Details</a>
+        </div>
+
+        <!-- eighth -->
+        <div class="shadow-lg bg-white rounded-md pt-3 pb-6 px-3">
+            <img src="./img/i4.png" alt="person using his phone" class="w-full  object-cover">
+            <span class="text-semi-black pt-3 block text-xxs">Shikhar Insurance</span>
+            <!-- icons -->
+            <div class="flex justify-between py-3">
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_35)">
+                        <path d="M3.86889 9.1015L6.05893 7.83763C6.1994 7.75664 6.36913 7.54098 6.41486 7.3854L7.0932 5.07737C7.11006 5.01963 7.13563 4.96809 7.16702 4.92275C7.26564 4.74139 7.45572 4.61816 7.67602 4.61816L10.5717 4.74314C10.6986 4.74856 10.8166 4.79661 10.9133 4.87625C10.9327 4.88807 10.9528 4.8995 10.9703 4.91287L12.9379 6.43037C13.1651 6.60572 13.2924 6.96223 13.2273 7.24182L12.4482 10.5938C12.3833 10.8736 12.1156 11.0848 11.8259 11.0848C11.8063 11.0848 11.7866 11.0838 11.767 11.0819L11.4762 11.0528C11.3204 11.0371 11.1797 10.9581 11.0906 10.8356C11.0013 10.7132 10.9689 10.5551 11.0017 10.402L11.5556 7.81438C11.5847 7.67855 11.511 7.47763 11.401 7.39295L11.0505 7.12305L10.8703 11.278C10.8701 11.2824 10.8687 11.2865 10.8684 11.291L11.6682 13.065C11.7689 13.2884 12.022 13.5978 12.2208 13.741L14.096 15.0911C14.398 15.3085 14.5121 15.7433 14.356 16.0812L14.0994 16.6355C13.9971 16.8566 13.792 16.994 13.5637 16.994C13.4331 16.994 13.3047 16.9496 13.1923 16.8661L10.7165 15.0225C10.4698 14.8388 10.1656 14.4814 10.024 14.2083L8.78799 11.8279C8.77811 11.8087 8.77191 11.7881 8.76377 11.7682L8.67755 11.7645L6.65453 17.342C6.51174 17.7357 6.13081 18.0004 5.70668 18.0004C5.60592 18.0004 5.50633 17.9851 5.41062 17.9546L5.28584 17.9149C5.0386 17.8364 4.84 17.6665 4.72646 17.4363C4.61311 17.2062 4.59936 16.945 4.68771 16.7012L6.81807 10.8283C6.82795 10.8011 6.84151 10.7763 6.85333 10.7506L6.92173 9.17455L4.57301 10.3946C4.49047 10.4376 4.39746 10.4603 4.30388 10.4603C4.08648 10.4603 3.88749 10.3427 3.78461 10.1534L3.64491 9.8961C3.49301 9.61689 3.59356 9.26038 3.86889 9.1015Z" fill="#B40043"/>
+                        <path d="M9.44317 4.19935C9.41275 4.19935 9.38194 4.19877 9.35113 4.19741C8.79098 4.17319 8.27365 3.93197 7.89466 3.51868C7.51567 3.1054 7.32037 2.56908 7.34459 2.00893C7.39458 0.852011 8.36142 -0.0481827 9.53307 0.00200032C10.0932 0.0262199 10.6106 0.267447 10.9895 0.68073C11.3685 1.09421 11.5638 1.63033 11.5396 2.19048C11.4908 3.31698 10.5699 4.19935 9.44317 4.19935Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_35">
+                        <rect width="18" height="18" fill="white" transform="matrix(-1 0 0 1 18 0)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">2.8 Km</span>
+                </div>
+
+                <div class="flex items-center col-gap-2">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_749_41)">
+                        <path d="M14.3289 3.08241C13.2365 1.19719 11.2962 0.0454394 9.13846 0.00142383C9.04635 -0.000474609 8.95364 -0.000474609 8.8615 0.00142383C6.70382 0.0454394 4.76348 1.19719 3.67103 3.08241C2.5544 5.0094 2.52385 7.32408 3.58929 9.27423L8.05284 17.4441C8.05484 17.4477 8.05684 17.4513 8.05892 17.4549C8.2553 17.7962 8.60711 18 9.00005 18C9.39296 18 9.74476 17.7962 9.94111 17.4549C9.94319 17.4513 9.94519 17.4477 9.94719 17.4441L14.4107 9.27423C15.4761 7.32408 15.4456 5.0094 14.3289 3.08241ZM8.99998 8.15627C7.60424 8.15627 6.46873 7.02076 6.46873 5.62502C6.46873 4.22928 7.60424 3.09377 8.99998 3.09377C10.3957 3.09377 11.5312 4.22928 11.5312 5.62502C11.5312 7.02076 10.3958 8.15627 8.99998 8.15627Z" fill="#B40043"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_749_41">
+                        <rect width="18" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-gray text-xxxs">Kathmandu, Nepal</span>
+                </div>
+            </div>
+
+            <!-- stars -->
+            <div class="flex items-center col-gap-2 mb-5">
+                <button class="bg-maroon text-white p-xs rounded text-xxs">4.5</button>
+                <ul class="flex justify-center">
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+
+                    <li>
+                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#!" class="text-xxs rounded border py-1 px-3 text-maroon bg-white border-maroon mb-4 font-bold hover:bg-maroon hover:text-white transition duration-500 ease-in-out">View Details</a>
+        </div>
+
+    </div>
+    <!-- insurance list ends here-->
+
+    <!-- footer -->
+<div class="py-10 px-5 sm:px-8 bg-dark-blue text-white">
+    <div class="flex flex-col gap-4 xs:flex-row xs:justify-between xs:flex-wrap space-y-6 md:space-y-0">
+        <!-- one -->
+        <div class="">
+            <img src="./img/logo.png" alt="this is the logo here" class="xs:w-48">
+            <p class="py-4 text-xxs md:max-w-xs tracking-wider">
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using making it look like readable English.
+            </p>
+            <div class="flex space-x-4">
+                <div class="icon hover:bg-fb transition duration-500 ease-in-out"><i class="fab fa-facebook-f"></i></div>                  
+                <div class="icon hover:bg-insta transition duration-500 ease-in-out"><i class="fab fa-instagram"></i></div>
+                <div class="icon hover:bg-twitter transition duration-500 ease-in-out"><i class="fab fa-twitter"></i></div>
+                <div class="icon hover:bg-yt transition duration-500 ease-in-out"><i class="fab fa-youtube"></i></div>
+            </div>
+        </div>
+
+        <!-- two -->
+        <div class="grid space-y-4 xs:flex-1 md:flex-none">
+            <h3 class="font-extrabold text-md red">Useful Links</h3>
+            <div class="flex gap-x-3 group">
+                <span class="v-line bg-white group-hover:bg-maroon"></span>
+                <a href="#!" class="text-xxs group-hover:text-maroon">About Us</a>
+            </div>
+            <div class="flex gap-x-3 group">
+                <span class="v-line bg-white group-hover:bg-maroon"></span>
+                <a href="#!" class="text-xxs group-hover:text-maroon">Send Money</a>
+            </div>
+            <div class="flex gap-x-3 group">
+                <span class="v-line bg-white group-hover:bg-maroon"></span>
+                <a href="#!" class="text-xxs group-hover:text-maroon">Refer & Earn</a>
+            </div>
+            <div class="flex gap-x-3 group">
+                <span class="v-line bg-white group-hover:bg-maroon"></span>
+                <a href="#!" class="text-xxs group-hover:text-maroon">Privacy Policy</a>
+            </div>
+            <div class="flex gap-x-3 group">
+                <span class="v-line bg-white group-hover:bg-maroon"></span>
+                <a href="#!" class="text-xxs group-hover:text-maroon">Terms & Conditions</a>
+            </div>
+        </div>
+
+        <!-- three -->
+        <div class="grid space-y-4 xs:flex-1 md:flex-none">
+            <h3 class="font-extrabold text-md">Contact Us</h3>
+            <div class="flex items-center col-gap-3">
+                <i class="far fa-clock"></i>
+                <span class="text-xxs">Sun - Fri, 09:00AM - 06:00PM</span>
+            </div>
+            <div class="flex items-center col-gap-3">
+                <svg class="h-4 w-4" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_782_36)">
+                    <path d="M25.7533 18.3788C24.039 18.3788 22.3558 18.1107 20.7608 17.5836C19.9655 17.3124 19.0601 17.5228 18.5413 18.0515L15.393 20.4281C11.7418 18.4791 9.4928 16.2308 7.57043 12.6071L9.87714 9.54078C10.4764 8.94228 10.6914 8.06801 10.4339 7.2477C9.90449 5.64426 9.63557 3.96185 9.63557 2.24685C9.63565 1.00793 8.62772 0 7.38886 0H2.24671C1.00793 0 0 1.00793 0 2.24671C0 16.4473 11.5528 28 25.7533 28C26.9921 28 28.0001 26.9921 28.0001 25.7532V20.6255C28 19.3867 26.9921 18.3788 25.7533 18.3788ZM26.4445 25.7533C26.4445 26.1346 26.1346 26.4445 25.7533 26.4445C12.4103 26.4445 1.5556 15.5897 1.5556 2.24678C1.5556 1.8655 1.8655 1.5556 2.24678 1.5556H7.38894C7.77022 1.5556 8.08011 1.8655 8.08011 2.24678C8.08011 4.12818 8.37557 5.97465 8.95358 7.72392C9.03408 7.98219 8.96875 8.2495 8.70749 8.52148L6.03385 12.0624C5.85462 12.3001 5.82648 12.6184 5.96094 12.8834C8.14311 17.1726 10.7947 19.8242 15.1142 22.0375C15.377 22.175 15.6991 22.1462 15.9376 21.9661L19.5599 19.2219C19.7429 19.0389 20.0172 18.9736 20.2648 19.0579C22.0262 19.6397 23.8726 19.9344 25.7533 19.9344C26.1346 19.9344 26.4445 20.2443 26.4445 20.6256V25.7533Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_782_36">
+                    <rect width="28" height="28" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+                <span class="text-xxs">+977-1234567898</span>
+            </div>
+            <div class="flex items-center col-gap-3">
+                <i class="far fa-envelope"></i>
+                <span class="text-xxs">mahal@support.com</span>
+            </div>
+            <div class="flex items-center col-gap-3">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="text-xxs">Dhangadhi, Nepal</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+<!-- footer ends -->
+
+<!-- copyright -->
+    <div class="text-center bg-maroon text-white py-4">
+        <p class="text-xxs">&copy; Copyright <span class="year"></span> All Rights Reserved by <a href="https://view9.com.np/" class="underline">View9</a> </p>
+    </div>
+
+</body>
+</html>

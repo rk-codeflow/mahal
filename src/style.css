@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Nunito Sans', sans-serif;
+        background: #F9F9F9;
+    }
+}
+
+@layer utilities {
+    .v-line {
+        width: 3px; 
+    }
+
+    .grid-props {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .insurance-props {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .p-xs {
+        padding: 1px 7px;
+    }
+
+    .slick-dots li {
+        width: 15px !important;
+        height: 15px !important;
+        border-radius: 50% !important;
+        top: -50% !important;
+        background: red !important;
+    }
+
+    .red {
+        color: red;
+    }
+}
