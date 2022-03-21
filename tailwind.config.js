@@ -31,6 +31,7 @@ module.exports = {
       '-40': '-40px',
       '80': '80px',
       '120': '120px',
+      '50': '50%',
     },
 
     boxShadow: {
@@ -50,6 +51,10 @@ module.exports = {
         '6/7': '85%',
       },
 
+      minWidth: {
+        '200': '200px',
+      },
+
       backgroundImage: {
         'news-1' : 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(https://picsum.photos/200)',
         'news-2' : 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(https://picsum.photos/id/1002/200)',
@@ -63,6 +68,7 @@ module.exports = {
         'maroon': '#b40043',
         'pink': '#FFEFF5',
         'semi-black': '#413D3D',
+        'semi-white': '#F1F1F1',
         'gray': '#9E9A9A',
         'yellow': '#FFC107',
         'dark-blue': '#101130',

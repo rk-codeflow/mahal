@@ -30,6 +30,12 @@
         gap: 1rem;
     }
 
+    .bank-props {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 1rem;
+    }
+
     .p-xs {
         padding: 1px 7px;
     }
@@ -91,6 +97,10 @@
         border-color: #b40043 !important;
     }
 
+    #tabs-bank .nav-link.active {
+        background: #fff;
+    }
+
     p.service::before {
         content: '';
         position: absolute;
@@ -100,4 +110,10 @@
         border-radius: 50%;
         background: #C4C4C4;
     }
+
+    .search-bar::placeholder {
+        padding-left: 1rem !important;
+        font-size: 12px;
+    }
+
 }
