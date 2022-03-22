@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Send Money</title>
+    <title>Topup</title>
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
@@ -153,24 +153,25 @@
     </div>
     <!-- nav ends -->
 
-    <!--send money banner -->
+    <!-- topup banner -->
     <div class="bg-ad bg-no-repeat bg-center bg-cover h-56"></div>
-    <!--send money banner ends-->
-
-    <!-- send money content -->
+    <!-- topup banner ends-->
+    
+    <!-- topup content -->
     <div class="shadow-md pt-10 pb-5 px-4 rounded bg-white my-8 w-4/5 max-w-xl mx-auto">
         <div class="flex gap-x-3 mb-4 ml-8">
             <span class="v-line bg-maroon"></span>
-            <h5 class="main-text font-bold text-maroon sm:text-md">Send Money</h5>
+            <h5 class="main-text font-bold text-maroon sm:text-md">Topup</h5>
         </div>
 
         <!-- form starts here -->
-        <form class="px-8 pt-6 pb-8">
+        <form class="px-8 pt-6 pb-8 relative">
             <div class="mb-5">
                 <label class="block text-xxs mb-2" for="mhl-id">
-                    MAHAL ID
+                    Mobile (10 digits) / Landline (8 digits)
                 </label>
                 <input class="appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-light-gray" id="mhl-id" type="text">
+                <a href="#"><i class="far fa-address-book fa-lg text-maroon absolute top-63 right-45"></i></a>
             </div>
 
             <div class="mb-5">
@@ -180,51 +181,61 @@
                 <input class="appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-light-gray" id="amount" type="number">
             </div>
 
-            <div class="mb-5">
-                <label class="block text-gray-700 text-xxs mb-2" for="purpose">
-                Purpose
-                </label>
-                <div class="">
-                <div class="mb-3">
-                    <select class="form-select appearance-none
-                    block
-                    w-full
-                    px-3
-                    py-1.5
-                    text-base
-                    font-normal
-                    text-gray-700
-                    bg-light-gray bg-clip-padding bg-no-repeat
-                    rounded
-                    transition
-                    ease-in-out
-                    m-0
-                    focus:outline-none" aria-label="Default select example">
-                        <option selected>Select</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                </div>
-            </div>
-
-            <div class="mb-5">
-                <label class="block text-gray-700 text-xxs mb-2" for="amount">
-                Enter Amount
-                </label>
-                <input class="appearance-none rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline bg-light-gray" id="amount" type="number">
-            </div>
-
-            <div class="flex items-center mt-12">
-                <button class="bg-maroon text-xxs text-white font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline" type="button">
+            <div class="flex flex-wrap row-gap-4 items-center justify-between mt-12">
+                <button class="bg-maroon text-xxs text-white font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline proceed-btn" type="button">
                     Proceed
+                </button> 
+
+                <button class="text-xxs font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline text-maroon border border-maroon" type="button">
+                    Clear
                 </button> 
             </div>
         </form>
         <!-- form here ends -->
     </div>
-    <!-- send money content ends -->
+    <!-- topup content ends -->
+
+    <!-- Deals section -->
+    <div class="deals hidden shadow-md pt-10 pb-5 px-10 rounded bg-white my-8 w-4/5 max-w-xl mx-auto">
+      <div class="flex gap-x-3 mb-4">
+          <span class="v-line bg-maroon"></span>
+          <h5 class="main-text font-bold text-maroon sm:text-md">Best Deals</h5>
+      </div>
+
+      <div class="py-6 grid space-y-4">
+        <!-- 1 -->
+        <div class="flex flex-wrap items-center shadow-sm px-4 py-6 md-sm:justify-between">
+          <img src="./img/esw.png" alt="esewa logo" class="h-20 w-20 object-contain">
+          <div class="text-xxs xs:ml-auto md-sm:ml-0 md-sm:flex md-sm:items-center md-sm:w-4/5 md-sm:justify-between">
+            <p class="text-light-black">Cashback: <span class="text-maroon">Rs. 3</span></p>
+            <p class="text-light-black py-1 md-sm:py-0">Mahal Offer: <span class="text-maroon">10 TP</span></p>
+            <a href="#" class="bg-maroon text-white block py-2 text-center px-4">Recharge</a>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="flex flex-wrap items-center shadow-sm px-4 py-6 md-sm:justify-between">
+          <img src="./img/khlt.png" alt="esewa logo" class="h-20 w-20 object-contain">
+          <div class="text-xxs xs:ml-auto md-sm:ml-0 md-sm:flex md-sm:items-center md-sm:w-4/5 md-sm:justify-between">
+            <p class="text-light-black">Cashback: <span class="text-maroon">Rs. 3</span></p>
+            <p class="text-light-black py-1 md-sm:py-0">Mahal Offer: <span class="text-maroon">10 TP</span></p>
+            <a href="#" class="bg-maroon text-white block py-2 text-center px-4">Recharge</a>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="flex flex-wrap items-center shadow-sm px-4 py-6 md-sm:justify-between">
+          <img src="./img/ime.png" alt="esewa logo" class="h-12 w-12 object-contain">
+          <div class="text-xxs xs:ml-auto md-sm:ml-0 md-sm:flex md-sm:items-center md-sm:w-4/5 md-sm:justify-between">
+            <p class="text-light-black">Cashback: <span class="text-maroon">Rs. 3</span></p>
+            <p class="text-light-black py-1 md-sm:py-0">Mahal Offer: <span class="text-maroon">10 TP</span></p>
+            <a href="#" class="bg-maroon text-white block py-2 text-center px-4">Recharge</a>
+          </div>
+        </div>
+  
+      </div>    
+    </div>
+    <!-- Deals section ends -->
 
     <!-- footer -->
     <div class="py-10 px-5 sm:px-8 bg-dark-blue text-white">
@@ -308,5 +319,18 @@
 
     <!-- tailwind elements js-->
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+    <!-- custom js -->
+    <script>
+      // TOPUP with Deals
+
+    const proceedBtn = document.querySelector('.proceed-btn');
+    const deals = document.querySelector('.deals');
+
+    proceedBtn.addEventListener('click', function() {
+        deals.classList.remove('hidden');
+    });
+    </script>
+
 </body>
 </html>

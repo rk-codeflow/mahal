@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Send Money</title>
+    <title>Confirmation</title>
+
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
@@ -153,78 +154,120 @@
     </div>
     <!-- nav ends -->
 
-    <!--send money banner -->
+    <!-- confirmation banner -->
     <div class="bg-ad bg-no-repeat bg-center bg-cover h-56"></div>
-    <!--send money banner ends-->
+    <!-- confirmation banner ends-->
 
-    <!-- send money content -->
-    <div class="shadow-md pt-10 pb-5 px-4 rounded bg-white my-8 w-4/5 max-w-xl mx-auto">
-        <div class="flex gap-x-3 mb-4 ml-8">
+    <!-- confirmation section -->
+    <div class="shadow-md pt-10 pb-5 px-10 rounded bg-white my-8 w-4/5 max-w-xl mx-auto">
+        <div class="flex gap-x-3 mb-4">
             <span class="v-line bg-maroon"></span>
-            <h5 class="main-text font-bold text-maroon sm:text-md">Send Money</h5>
+            <h5 class="main-text font-bold text-maroon sm:text-md">Confirmation</h5>
+        </div>
+       
+        <div class="bg-light-gray pb-10 px-8">
+          <img src="./img/esw.png" alt="this is esewa logo" class="h-24 w-24 object-contain">
+          <div class="grid space-y-5">
+            <!-- phone number -->
+            <div class="flex justify-between text-xxxs">
+              <p class="text-light-black">Phone Number:</p>
+              <p>9848452145</p>
+            </div>
+
+            <!-- amount -->
+            <div class="flex justify-between text-xxxs">
+              <p class="text-light-black">Amount:</p>
+              <p>100</p>
+            </div>
+
+            <!-- cashback -->
+            <div class="flex justify-between text-xxxs">
+              <p class="text-light-black">eSewa Cashback:</p>
+              <p>2</p>
+            </div>
+
+            <!-- cashback -->
+            <div class="flex justify-between text-xxxs">
+              <p class="text-light-black">Mahal Offer:</p>
+              <p>10 TP</p>
+            </div>
+
+            <div class="bg-gray w-full h-px"></div>
+
+            <!-- total -->
+            <div class="flex justify-between text-xxxs font-extrabold text-maroon">
+              <p class="">Total Amount:</p>
+              <p>Rs. 98.0</p>
+            </div>
+          </div>
         </div>
 
-        <!-- form starts here -->
-        <form class="px-8 pt-6 pb-8">
-            <div class="mb-5">
-                <label class="block text-xxs mb-2" for="mhl-id">
-                    MAHAL ID
-                </label>
-                <input class="appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-light-gray" id="mhl-id" type="text">
-            </div>
+        <!-- buttons -->
+        <div class="flex flex-wrap row-gap-4 items-center justify-between mt-12">
+          <button class="bg-maroon text-xxs text-white font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline confirm-btn">
+              Confirm
+          </button> 
 
-            <div class="mb-5">
-                <label class="block text-xxs mb-2" for="amount">
-                    Amount
-                </label>
-                <input class="appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-light-gray" id="amount" type="number">
-            </div>
-
-            <div class="mb-5">
-                <label class="block text-gray-700 text-xxs mb-2" for="purpose">
-                Purpose
-                </label>
-                <div class="">
-                <div class="mb-3">
-                    <select class="form-select appearance-none
-                    block
-                    w-full
-                    px-3
-                    py-1.5
-                    text-base
-                    font-normal
-                    text-gray-700
-                    bg-light-gray bg-clip-padding bg-no-repeat
-                    rounded
-                    transition
-                    ease-in-out
-                    m-0
-                    focus:outline-none" aria-label="Default select example">
-                        <option selected>Select</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                </div>
-            </div>
-
-            <div class="mb-5">
-                <label class="block text-gray-700 text-xxs mb-2" for="amount">
-                Enter Amount
-                </label>
-                <input class="appearance-none rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline bg-light-gray" id="amount" type="number">
-            </div>
-
-            <div class="flex items-center mt-12">
-                <button class="bg-maroon text-xxs text-white font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline" type="button">
-                    Proceed
-                </button> 
-            </div>
-        </form>
-        <!-- form here ends -->
+          <button class="text-xxs font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline text-maroon border border-maroon cancel-btn" type="button">
+              Cancel
+          </button> 
+      </div>
     </div>
-    <!-- send money content ends -->
+    <!-- confirmation section ends -->
+
+    <!-- modal starts -->
+    <div class="fixed pointer-events-none flex items-center justify-center h-screen w-full z-50 top-30" >
+      <div class="confirm-modal hidden shadow-sm w-4/5 max-w-lg bg-white px-10 rounded-sm">
+        <!-- top starts -->
+        <div class="flex justify-between items-center">
+          <div class="grid space-y-2">
+            <img src="./img/ncell.png" alt="Ncell Logo">
+            <p class="text-xxs">Ncell Topup</p>
+            <span class="">04-08-2020 6:32 PM</span>
+            <button class="text-xxs uppercase bg-light-gray block text-maroon p-2 w-24">complete</button>
+          </div>
+          <p class="font-extrabold text-maroon">Rs. 100</p>
+        </div>
+        <!-- top ends -->
+
+        <div class="text-xxs my-6 grid space-y-2">
+          <div class="flex justify-between">
+            <p class="text-light-black">Transaction Code:</p>
+            <p>0SDGT56</p>
+          </div>
+
+          <div class="flex justify-between">
+            <p class="text-light-black">Processed By:</p>
+            <p>9804455678</p>
+          </div>
+
+          <div class="flex justify-between">
+            <p class="text-light-black">Channel:</p>
+            <p>GPRS</p>
+          </div>
+
+          <div class="flex justify-between">
+            <p class="text-light-black">Mobile Number:</p>
+            <p>85748956</p>
+          </div>
+        </div>
+
+        <!-- checkbox -->
+        <div class="flex confirm my-5">
+            <div class="form-check">
+              <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckChecked" checked>
+              <label class="form-check-label inline-block text-xxs" for="flexCheckChecked">
+                Save This Payment
+              </label>
+            </div>
+        </div>
+        <!--checkbox ends -->
+        <div class="flex justify-center my-10">
+          <button class="bg-maroon text-xxs text-white px-10 py-3">Finish</button>
+        </div>
+      </div>
+    </div>
+    <!-- modal ends -->
 
     <!-- footer -->
     <div class="py-10 px-5 sm:px-8 bg-dark-blue text-white">
@@ -308,5 +351,17 @@
 
     <!-- tailwind elements js-->
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+    <!-- custom js -->
+    <script>
+      // Confirmation ==>> Topup
+    const confirmBtn = document.querySelector('.confirm-btn');
+    const cancelBtn = document.querySelector('.cancel-btn');
+    const conModal = document.querySelector('.confirm-modal')
+
+    confirmBtn.addEventListener('click', function(e) {
+        conModal.classList.remove('hidden')
+    });
+    </script>
 </body>
 </html>

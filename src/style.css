@@ -36,6 +36,12 @@
         gap: 1rem;
     }
 
+    .cat-props {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+        gap: 1rem;
+    }
+
     .p-xs {
         padding: 1px 7px;
     }
@@ -114,6 +120,11 @@
     .search-bar::placeholder {
         padding-left: 1rem !important;
         font-size: 12px;
+    }
+
+    .confirm .form-check-input:checked {
+        background-color: #b40043 !important;
+        border-color: #b40043 !important;
     }
 
 }
