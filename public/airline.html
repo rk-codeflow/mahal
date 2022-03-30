@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airlines Tickets</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+    <!-- tailwind elements cdn-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- nav here -->
+    <div class="font-nunito">
+        <div class="bg-maroon text-white py-4 px-5 sm:px-8 xs:flex xs:justify-between">
+          <div class="flex space-x-4 justify-center items-center">
+            <p class="font-bold">Download App</p>
+            <a href="https://www.apple.com/app-store/"><i class="fab fa-apple fa-lg"></i></a>
+            <a href="https://play.google.com/store/apps/?hl=en&gl=US">
+              <svg width="21" height="21" class="fill-current text-white" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_671_4)">
+                <path d="M6.99276 20.4992C6.99276 21.1835 7.45991 21.6397 8.16064 21.6397H9.32852V25.6311C9.32852 26.5435 10.146 27.3418 11.0803 27.3418C12.0147 27.3418 12.8322 26.5435 12.8322 25.6311V21.6397H15.1679V25.6311C15.1679 26.5435 15.9855 27.3418 16.9198 27.3418C17.8541 27.3418 18.6716 26.5435 18.6716 25.6311V21.6397H19.8395C20.5402 21.6397 21.0073 21.1835 21.0073 20.4992V9.09495H6.99276V20.4992ZM4.07305 9.09495C3.13875 9.09495 2.32123 9.8933 2.32123 10.8056V18.7886C2.32123 19.7009 3.13875 20.4992 4.07305 20.4992C5.00736 20.4992 5.82487 19.7009 5.82487 18.7886V10.8056C5.82487 9.89325 5.00736 9.09495 4.07305 9.09495ZM23.927 9.09495C22.9927 9.09495 22.1752 9.8933 22.1752 10.8056V18.7886C22.1752 19.7009 22.9927 20.4992 23.927 20.4992C24.8614 20.4992 25.6789 19.7009 25.6789 18.7886V10.8056C25.6789 9.89325 24.8614 9.09495 23.927 9.09495ZM18.0876 2.48047L19.6059 0.997919C19.8395 0.769833 19.8395 0.427705 19.6059 0.19962C19.3723 -0.0285107 19.0219 -0.0285107 18.7883 0.19962L17.0365 1.91026C16.219 1.34005 15.1679 1.11192 14 1.11192C12.8321 1.11192 11.781 1.34005 10.8467 1.79617L9.21169 0.085532C8.97811 -0.0285107 8.51096 -0.0285107 8.27738 0.085532C8.16059 0.313662 8.16059 0.769833 8.27738 0.997874L9.79563 2.48043C8.16059 3.7349 6.99271 5.67358 6.99271 7.95444H21.0073C21.0073 5.67367 19.8395 3.6209 18.0876 2.48047ZM11.6643 5.67367H10.4964V4.53324H11.6643V5.67367ZM17.5037 5.67367H16.3358V4.53324H17.5037V5.67367Z"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_671_4">
+                <rect width="28" height="27.3418"/>
+                </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </div>
+        
+          <div class="flex space-x-4 justify-center items-center  mt-4 xs:mt-0">
+            <a href="#!"><i class="fas fa-search fa-lg"></i></a>
+            <a href="#!">
+              <svg width="21" height="21" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_755_41)">
+              <path d="M30.504 19.5093V15.957C30.504 10.7749 27.0594 6.38274 22.3399 4.94816V3.33984C22.3399 1.49825 20.8417 0 19.0001 0C17.1585 0 15.6602 1.49825 15.6602 3.33984V4.94816C10.9407 6.38274 7.49618 10.7749 7.49618 15.957V19.5093C7.49618 24.0613 5.76109 28.3775 2.61058 31.6631C2.30183 31.985 2.21507 32.4601 2.39008 32.8704C2.56509 33.2807 2.96809 33.5469 3.41415 33.5469H13.5457C14.0628 36.0846 16.312 38 19.0001 38C21.6883 38 23.9373 36.0846 24.4545 33.5469H34.586C35.0321 33.5469 35.435 33.2807 35.61 32.8704C35.785 32.4601 35.6983 31.985 35.3896 31.6631C32.2391 28.3775 30.504 24.0612 30.504 19.5093ZM17.8868 3.33984C17.8868 2.72598 18.3862 2.22656 19.0001 2.22656C19.614 2.22656 20.1134 2.72598 20.1134 3.33984V4.50716C19.747 4.47183 19.3756 4.45312 19.0001 4.45312C18.6245 4.45312 18.2532 4.47183 17.8868 4.50716V3.33984ZM19.0001 35.7734C17.5487 35.7734 16.3113 34.8427 15.8517 33.5469H22.1484C21.6889 34.8427 20.4514 35.7734 19.0001 35.7734ZM5.81364 31.3203C8.34903 27.9217 9.72274 23.8088 9.72274 19.5093V15.957C9.72274 10.8415 13.8846 6.67969 19.0001 6.67969C24.1156 6.67969 28.2774 10.8415 28.2774 15.957V19.5093C28.2774 23.8088 29.6511 27.9217 32.1866 31.3203H5.81364Z"/>
+              <path d="M33.4727 15.957C33.4727 16.5718 33.9712 17.0703 34.586 17.0703C35.2008 17.0703 35.6993 16.5718 35.6993 15.957C35.6993 11.4965 33.9623 7.30288 30.8082 4.14881C30.3735 3.71411 29.6686 3.71403 29.2338 4.14881C28.799 4.58358 28.799 5.28843 29.2338 5.72321C31.9673 8.45676 33.4727 12.0912 33.4727 15.957Z"/>
+              <path d="M3.41406 17.0702C4.02889 17.0702 4.52734 16.5718 4.52734 15.957C4.52734 12.0912 6.0328 8.45679 8.76627 5.72324C9.20105 5.28846 9.20105 4.58361 8.76627 4.14883C8.33157 3.71406 7.62664 3.71406 7.19187 4.14883C4.0378 7.30291 2.30078 11.4964 2.30078 15.957C2.30078 16.5718 2.79923 17.0702 3.41406 17.0702Z"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_755_41">
+              <rect width="38" height="38"/>
+              </clipPath>
+              </defs>
+              </svg>
+            </a>
+            <a href="#!">
+              <svg width="34" height="21" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.7401 0H3.93178C1.76382 0 0 1.76382 0 3.93178V11.7401C0 13.9081 1.76382 15.6719 3.93178 15.6719H11.7211C13.9081 15.6719 15.6719 13.9081 15.6719 11.7401V3.93178C15.6719 1.76382 13.9081 0 11.7401 0ZM13.0156 11.7401C13.0156 12.4434 12.4434 13.0156 11.7401 13.0156H3.93178C3.22847 13.0156 2.65625 12.4434 2.65625 11.7401V3.93178C2.65625 3.22847 3.22847 2.65625 3.93178 2.65625H11.7401C12.4434 2.65625 13.0156 3.22847 13.0156 3.93178V11.7401Z"/>
+                <path d="M30.0156 0H22.3125C20.1155 0 18.3281 1.78739 18.3281 3.98438V11.6875C18.3281 13.8845 20.1155 15.6719 22.3125 15.6719H30.0156C32.2126 15.6719 34 13.8845 34 11.6875V3.98438C34 1.78739 32.2126 0 30.0156 0ZM31.3438 11.6875C31.3438 12.4198 30.748 13.0156 30.0156 13.0156H22.3125C21.5802 13.0156 20.9844 12.4198 20.9844 11.6875V3.98438C20.9844 3.25205 21.5802 2.65625 22.3125 2.65625H30.0156C30.748 2.65625 31.3438 3.25205 31.3438 3.98438V11.6875Z"/>
+                <path d="M11.7401 18.3281H3.93178C1.76382 18.3281 0 20.0919 0 22.2599V30.0682C0 32.2362 1.76382 34 3.93178 34H11.7401C13.9081 34 15.6719 32.2362 15.6719 30.0682V22.2599C15.6719 20.0919 13.9081 18.3281 11.7401 18.3281ZM13.0156 30.0682C13.0156 30.7715 12.4434 31.3438 11.7401 31.3438H3.93178C3.22847 31.3438 2.65625 30.7715 2.65625 30.0682V22.2599C2.65625 21.5566 3.22847 20.9844 3.93178 20.9844H11.7401C12.4434 20.9844 13.0156 21.5566 13.0156 22.2599V30.0682Z"/>
+                <path d="M30.0156 18.3281H22.3125C20.1155 18.3281 18.3281 20.1155 18.3281 22.3125V30.0156C18.3281 32.2126 20.1155 34 22.3125 34H30.0156C32.2126 34 34 32.2126 34 30.0156V22.3125C34 20.1155 32.2126 18.3281 30.0156 18.3281ZM31.3438 30.0156C31.3438 30.748 30.748 31.3438 30.0156 31.3438H22.3125C21.5802 31.3438 20.9844 30.748 20.9844 30.0156V22.3125C20.9844 21.5802 21.5802 20.9844 22.3125 20.9844H30.0156C30.748 20.9844 31.3438 21.5802 31.3438 22.3125V30.0156Z"/>
+              </svg>
+            </a>
+            <div class="flex items-center col-gap-2 m-lg:hidden">
+              <span class="text-white font-bold">Rs. 10,000</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        
+        <!--main nav -->
+        <!-- <nav class="py-4 px-5 sm:px-8 bg-white">
+          <div class="flex justify-between items-center">
+      
+            <div class="logo">
+              <a href="#!" class="">
+                <img src="{{asset('images/logo.png')}}" alt="this is the logo here" class="h-6 object-cover w-full">
+              </a>
+            </div>
+          
+              <div class="hidden m-lg:flex space-x-6">
+                <a href="" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Home</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Load Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Send Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Withdraw Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Contact</a>
+              </div>
+            
+              <div class="hidden m-lg:flex buttons space-x-4 items-center">
+                <button class="bg-maroon text-white py-1 px-6 text-xxs rounded login focus:outline-none">Login</button>
+                <button class="border py-1 px-6 text-maroon bg-white border-maroon text-xxs rounded hover:bg-maroon hover:text-white transition duration-500 ease-in-out register focus:outline-none">Register</button>
+              </div>
+          
+              <div class="m-lg:hidden">
+                <button class="pointer menu">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                  </svg>
+                </button>
+              </div>
+          </div>
+        
+          <div class="mobile-menu hidden lg:hidden space-y-3 text-center mt-4">
+                <a href="#!" class="block">Home</a>
+                <a href="#!" class="block">Load Money</a>
+                <a href="#!" class="block">Send Money</a>
+                <a href="#!" class="block">Withdraw Money</a>
+                <a href="#!" class="block">Contact</a>
+                <button class="bg-maroon text-white py-1 px-6 rounded inline-block text-xxs login">Login</button>
+                <button class="text-xxs rounded border py-1 px-6 text-maroon bg-white border-maroon inline-block register">Register</button>
+          </div>
+        </nav> -->
+        <!--main nav ends-->
+      
+        <!-- user profile -->
+        <nav class="py-4 px-5 sm:px-8 bg-white">
+          <div class="flex justify-between items-center">
+            <!--logo-->
+            <div class="logo">
+              <a href="#!" class="">
+                <img src="./img/logo.png" alt="this is the logo here" class="h-6 object-cover w-full">
+              </a>
+            </div>
+          
+            <!--links-->
+              <div class="hidden m-lg:flex space-x-6">
+                <a href="" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Home</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Load Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Send Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Withdraw Money</a>
+                <a href="#!" class="text-xxs tracking-wider hover:text-maroon transition duration-500 ease-in-out">Contact</a>
+              </div>
+            
+              <!--user profile-->
+              <div class="items-center col-gap-2 hidden m-lg:flex cursor-pointer">
+                <span class="text-maroon font-bold">Rs. 10,000</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="user-icon h-8 w-8 fill-current text-maroon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+                </svg>
+              </div>
+          
+              <!-- mobile menu -->
+              <div class="m-lg:hidden">
+                <button class="pointer menu">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                  </svg>
+                </button>
+              </div>
+          </div>
+        </nav>
+        <!-- user profile ends -->
+    </div>
+    <!-- nav ends -->
+
+    <!-- airline banner -->
+    <div class="bg-ad bg-no-repeat bg-center bg-cover h-56"></div>
+    <!-- airline banner ends-->
+    
+    <!-- topup content -->
+    <div class="shadow-md pt-10 pb-5 px-12 rounded bg-white my-8 w-4/5 max-w-xl mx-auto">
+        <div class="flex gap-x-3 mb-4">
+            <span class="v-line bg-maroon"></span>
+            <h5 class="main-text font-bold text-maroon sm:text-md">Buy Airlines Tickets</h5>
+        </div>
+
+        <!-- tabs -->
+        <div class="">
+          <ul class="nav nav-tabs flex  flex-wrap list-none border-b-0 pl-0" id="tabs-tab3" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a href="#tabs-home3" class="
+                nav-link
+                w-full
+                block
+                font-medium
+                text-xxs
+                leading-tight
+                border-x-0 border-t-0 border-b-2 border-transparent
+                px-5 sm:px-8
+                py-3
+                my-2
+                focus:border-transparent focus:shadow-sm
+                active
+              " id="tabs-home-tab3" data-bs-toggle="pill" data-bs-target="#tabs-home3" role="tab" aria-controls="tabs-home3"
+                aria-selected="true">
+                <div class="flex justify-center mb-2">
+                  <svg class="h-6 w-6" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.207 30.875H15.6601C16.0699 30.875 16.4023 30.5426 16.4023 30.1328V15.2891H17.8867C18.1604 15.2891 18.4118 15.1384 18.541 14.8971C18.6701 14.6558 18.656 14.363 18.5042 14.1352L14.0511 7.4555C13.9134 7.24902 13.6817 7.125 13.4336 7.125C13.1854 7.125 12.9537 7.24902 12.816 7.4555L8.36292 14.1352C8.21107 14.3629 8.19697 14.6558 8.32611 14.8971C8.45525 15.1384 8.70678 15.2891 8.98042 15.2891H10.4648V30.1328C10.4648 30.5426 10.7972 30.875 11.207 30.875ZM10.3673 13.8047L13.4336 9.20513L16.4998 13.8047H15.6601C15.2503 13.8047 14.9179 14.137 14.9179 14.5469V29.3906H11.9492V14.5469C11.9492 14.137 11.6168 13.8047 11.207 13.8047H10.3673Z" fill="#B40043"/>
+                    <path d="M22.3398 30.875H26.7929C27.2028 30.875 27.5351 30.5426 27.5351 30.1328V15.2891H29.0195C29.2932 15.2891 29.5447 15.1384 29.6738 14.8971C29.8029 14.6558 29.7888 14.363 29.637 14.1352L25.1839 7.4555C25.0463 7.24902 24.8145 7.125 24.5664 7.125C24.3182 7.125 24.0865 7.24902 23.9489 7.4555L19.4957 14.1352C19.3439 14.3629 19.3298 14.6558 19.4589 14.8971C19.5881 15.1384 19.8396 15.2891 20.1132 15.2891H21.5976V30.1328C21.5976 30.5426 21.93 30.875 22.3398 30.875ZM21.5001 13.8047L24.5664 9.20513L27.6326 13.8047H26.7929C26.3831 13.8047 26.0507 14.137 26.0507 14.5469V29.3906H23.082V14.5469C23.082 14.137 22.7496 13.8047 22.3398 13.8047H21.5001Z" fill="#B40043"/>
+                    <path d="M31.9141 32.6562C32.324 32.6562 32.6562 32.324 32.6562 31.9141C32.6562 31.5042 32.324 31.1719 31.9141 31.1719C31.5042 31.1719 31.1719 31.5042 31.1719 31.9141C31.1719 32.324 31.5042 32.6562 31.9141 32.6562Z" fill="#B40043"/>
+                    <path d="M19 0C8.49204 0 0 8.48929 0 19C0 29.508 8.48929 38 19 38C22.8715 38 26.5953 36.8452 29.7685 34.6604C30.1061 34.4279 30.1913 33.9658 29.9588 33.6282C29.7264 33.2906 29.2642 33.2055 28.9267 33.4378C26.0022 35.4513 22.5696 36.5156 19 36.5156C9.34184 36.5156 1.48438 28.6582 1.48438 19C1.48438 9.34184 9.34184 1.48438 19 1.48438C28.6582 1.48438 36.5156 9.34184 36.5156 19C36.5156 22.5695 35.4513 26.0021 33.4378 28.9267C33.2053 29.2643 33.2906 29.7264 33.6281 29.9588C33.9658 30.1912 34.4278 30.1059 34.6603 29.7685C36.8452 26.5951 38 22.8715 38 19C38 8.49204 29.5107 0 19 0V0Z" fill="#B40043"/>
+                  </svg>      
+                </div>
+                <span class="text-xxxs md:text-xxs hidden xsm:block">One Way</span>
+              </a>
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a href="#tabs-profile3" class="
+                nav-link
+                w-full
+                block
+                font-medium
+                text-xxs
+                leading-tight
+                border-x-0 border-t-0 border-b-2 border-transparent
+                px-5 sm:px-8
+                py-3
+                my-2
+                focus:border-transparent
+              " id="tabs-profile-tab3" data-bs-toggle="pill" data-bs-target="#tabs-profile3" role="tab"
+                aria-controls="tabs-profile3" aria-selected="false">
+                <div class="flex justify-center mb-2">
+                  <svg class="h-6 w-6 text-maroon fill-current" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.207 30.875H15.6601C16.0699 30.875 16.4023 30.5426 16.4023 30.1328V15.2891H17.8867C18.1604 15.2891 18.4118 15.1384 18.541 14.8971C18.6701 14.6558 18.656 14.363 18.5042 14.1352L14.051 7.4555C13.9134 7.24902 13.6817 7.125 13.4335 7.125C13.1854 7.125 12.9536 7.24902 12.816 7.4555L8.36292 14.1352C8.21107 14.3629 8.19697 14.6558 8.32611 14.8971C8.45525 15.1384 8.70678 15.2891 8.98042 15.2891H10.4648V30.1328C10.4648 30.5426 10.7972 30.875 11.207 30.875ZM10.3673 13.8047L13.4335 9.20513L16.4998 13.8047H15.6601C15.2503 13.8047 14.9179 14.137 14.9179 14.5469V29.3906H11.9492V14.5469C11.9492 14.137 11.6168 13.8047 11.207 13.8047H10.3673Z"/>
+                    <path d="M26.7929 7.125H22.3398C21.93 7.125 21.5976 7.45735 21.5976 7.86719V22.7109H20.1132C19.8395 22.7109 19.5881 22.8616 19.4589 23.1029C19.3298 23.3442 19.3439 23.637 19.4957 23.8648L23.9489 30.5445C24.0865 30.751 24.3182 30.875 24.5664 30.875C24.8145 30.875 25.0463 30.751 25.1839 30.5445L29.637 23.8648C29.7888 23.6371 29.8029 23.3442 29.6738 23.1029C29.5447 22.8616 29.2932 22.7109 29.0195 22.7109H27.5351V7.86719C27.5351 7.45735 27.2028 7.125 26.7929 7.125ZM27.6326 24.1953L24.5664 28.7949L21.5001 24.1953H22.3398C22.7496 24.1953 23.082 23.863 23.082 23.4531V8.60938H26.0507V23.4531C26.0507 23.863 26.3831 24.1953 26.7929 24.1953H27.6326Z"/>
+                    <path d="M31.9141 32.6562C32.324 32.6562 32.6562 32.324 32.6562 31.9141C32.6562 31.5042 32.324 31.1719 31.9141 31.1719C31.5042 31.1719 31.1719 31.5042 31.1719 31.9141C31.1719 32.324 31.5042 32.6562 31.9141 32.6562Z"/>
+                    <path d="M19 0C8.49204 0 0 8.48929 0 19C0 29.508 8.48929 38 19 38C22.8715 38 26.5953 36.8452 29.7685 34.6604C30.1061 34.4279 30.1913 33.9658 29.9588 33.6282C29.7265 33.2906 29.2642 33.2055 28.9267 33.4378C26.0022 35.4513 22.5696 36.5156 19 36.5156C9.34184 36.5156 1.48438 28.6582 1.48438 19C1.48438 9.34184 9.34184 1.48438 19 1.48438C28.6582 1.48438 36.5156 9.34184 36.5156 19C36.5156 22.5695 35.4513 26.0021 33.4378 28.9267C33.2053 29.2643 33.2906 29.7264 33.6281 29.9588C33.9658 30.1912 34.4279 30.1059 34.6603 29.7685C36.8452 26.5951 38 22.8715 38 19C38 8.49204 29.5107 0 19 0Z"/>
+                  </svg>        
+                </div>
+                <span class="text-xxxs md:text-xxs hidden xsm:block">Two Way</span>
+              </a>
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <a href="#tabs-messages3" class="
+                nav-link
+                w-full
+                block
+                font-medium
+                text-xxs
+                leading-tight
+                border-x-0 border-t-0 border-b-2 border-transparent
+                p-5 sm:px-8
+                py-3
+                my-2
+                focus:border-transparent
+              " id="tabs-messages-tab3" data-bs-toggle="pill" data-bs-target="#tabs-messages3" role="tab"
+                aria-controls="tabs-messages3" aria-selected="false">
+                <div class="flex justify-center mb-2">
+                  <svg class="h-6 w-6 text-maroon fill-current" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30.5658 18.0684L23.7675 5.19929C23.6067 4.89484 23.2928 4.70514 22.9485 4.7041C22.9476 4.7041 22.9467 4.7041 22.9458 4.7041C22.6025 4.7041 22.2888 4.8918 22.1266 5.19454L15.8975 16.8216C15.7946 17.0136 15.8133 17.248 15.9454 17.4211L17.4702 19.4207C17.6389 19.642 17.895 19.775 18.173 19.7859C18.4501 19.7974 18.7167 19.684 18.9021 19.4765L21.3128 16.7788L25.9987 22.3108C26.1736 22.5173 26.4292 22.6371 26.6998 22.6394C26.7025 22.6394 26.7052 22.6394 26.7079 22.6394C26.9756 22.6394 27.2298 22.5243 27.4065 22.3228L30.1837 19.1561C30.1997 19.1379 30.2145 19.1186 30.228 19.0985L30.5365 18.6368C30.6499 18.4671 30.6612 18.2489 30.5658 18.0684ZM29.324 18.4506L26.7102 21.431L22.0255 15.9004C21.8517 15.6953 21.5978 15.5755 21.3288 15.572C21.3247 15.5719 21.3206 15.5719 21.3165 15.5719C21.052 15.5719 20.8001 15.6844 20.6236 15.882L18.2203 18.5713L17.0461 17.0315L22.9447 6.02148L29.4283 18.2947L29.324 18.4506Z"/>
+                    <path d="M37.8913 31.9329L33.5274 23.6725C33.384 23.4011 33.0479 23.2974 32.7764 23.4408C32.505 23.5842 32.4012 23.9204 32.5446 24.1918L36.7672 32.1848H21.9634C21.9459 32.0985 15.5134 19.8921 15.5134 19.8921L16.4694 18.1075L17.4703 19.4201C17.639 19.6414 17.8952 19.7744 18.1731 19.7853C18.4503 19.7968 18.7169 19.6834 18.9022 19.4759L21.3129 16.7782L25.9988 22.3102C26.1738 22.5167 26.4294 22.6365 26.7 22.6388C26.7026 22.6388 26.7053 22.6388 26.708 22.6388C26.9757 22.6388 27.23 22.5237 27.4067 22.3222C27.4085 22.3201 27.4104 22.318 27.4122 22.3158L29.9666 19.3122L31.005 21.2778C31.1484 21.5492 31.4846 21.6531 31.7561 21.5096C32.0275 21.3662 32.1312 21.03 31.9878 20.7586L23.7676 5.19831C23.6067 4.89387 23.2929 4.70416 22.9486 4.70312H22.9458C22.6026 4.70312 22.2889 4.89082 22.1267 5.19364L16.2908 16.0872L15.8977 16.821C15.8977 16.821 15.8976 16.8211 15.8976 16.8212L14.8873 18.7069L11.8836 13.0213C11.7629 12.7929 11.5562 12.6291 11.3151 12.561C11.2346 12.5383 11.1504 12.5262 11.0642 12.526C11.0633 12.526 11.0625 12.526 11.0616 12.526C11.0501 12.526 11.0387 12.5267 11.0273 12.5272C11.0178 12.5275 11.0083 12.5276 10.999 12.5282C10.9905 12.5287 10.9821 12.5299 10.9736 12.5307C10.961 12.5319 10.9484 12.5328 10.9359 12.5345C10.9247 12.536 10.9136 12.5382 10.9026 12.5402C10.8933 12.5418 10.8839 12.5431 10.8747 12.545C10.6073 12.5996 10.3746 12.7699 10.2424 13.0166L8.20807 16.8141L4.78644 23.201C4.78585 23.2021 4.7854 23.2033 4.78481 23.2044L0.111253 31.9282C-0.0444576 32.2189 -0.0362935 32.5614 0.133074 32.8444C0.302515 33.1274 0.600578 33.2963 0.930406 33.2963H37.0695C37.3982 33.2963 37.6958 33.1282 37.8654 32.8467C38.0353 32.5652 38.0448 32.2236 37.8913 31.9329ZM17.2146 16.7166L22.9449 6.02088L29.4073 18.2541L26.7082 21.4277L22.0257 15.8998C21.8518 15.6945 21.5978 15.5748 21.3289 15.5713C21.3248 15.5712 21.3207 15.5712 21.3166 15.5712C21.0521 15.5712 20.8002 15.6838 20.6237 15.8813L18.2204 18.5706L17.0463 17.0308L17.2146 16.7166ZM1.23493 32.1846L5.44357 24.3286L7.06614 25.6877C7.24115 25.8342 7.45282 25.9062 7.66331 25.9062C7.91855 25.9062 8.172 25.8004 8.35629 25.5939L10.2173 23.5081L11.416 24.6974C11.6339 24.9136 11.9858 24.9121 12.202 24.6943C12.4182 24.4764 12.4168 24.1245 12.199 23.9083L10.8638 22.5836C10.6836 22.4049 10.4356 22.3072 10.181 22.3144C9.92728 22.3221 9.6848 22.4352 9.51588 22.6247L7.64453 24.722L5.9798 23.3276L11.0606 13.8436L17.6169 26.2545L16.0341 27.7132L14.5862 26.2766C14.3684 26.0604 14.0164 26.0618 13.8002 26.2797C13.584 26.4975 13.5854 26.8495 13.8033 27.0657L15.3749 28.6251C15.5562 28.8049 15.7926 28.8953 16.0295 28.8953C16.2549 28.8953 16.4806 28.8134 16.6593 28.6487L18.1544 27.2707L20.7503 32.1846H1.23493Z"/>
+                  </svg>
+                </div>
+
+                <span class="text-xxxs md:text-xxs hidden xsm:block">Mountain Flight</span> 
+                </a>
+            </li>
+          </ul>
+
+          <div class="tab-content mt-3" id="tabs-tabContent3">
+            <div class="tab-pane fade show active" id="tabs-home3" role="tabpanel" aria-labelledby="tabs-home-tab3">
+              <!-- frst tab -->
+             <!-- form starts here -->
+            <form class="text-light-black">
+              <div class="flex flex-wrap -mx-3">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="text-xxs mb-2 text-light-black" for="from">
+                    From
+                  </label>
+
+                  <div class="flex justify-center mt-1 text-light-black">
+                    <div class="mb-3 xl:w-96 w-full relative">
+                      <!-- icon -->
+                      <svg class="h-3 w-3 absolute top-10 left-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_838_1177)">
+                        <path d="M31.3691 0.663186C30.6089 -0.0970015 29.2951 -0.171751 27.5687 0.446936C26.3815 0.872561 25.1363 1.58581 24.5405 2.18156L19.7561 6.96593L4.00725 4.49231L0 8.49956L13.0938 13.6282L8.88969 17.8324L2.92269 18.1818L0.0615 21.043L6.53706 24.1676L4.72294 25.9817L6.05044 27.3092L7.86212 25.4976L10.9898 31.9701L13.8503 29.1095L14.1998 23.1425L18.4745 18.8678L23.6022 31.959L27.6094 27.9517L25.1362 12.2059L29.8506 7.4915C30.4464 6.89581 31.1597 5.65056 31.5853 4.46331C32.204 2.73744 32.1292 1.42325 31.3691 0.663186ZM3.35663 7.79806L4.6595 6.49518L18.1138 8.60837L14.5428 12.1794L3.35663 7.79806ZM25.6066 27.2996L24.3037 28.6025L19.9233 17.4191L23.4938 13.8486L25.6066 27.2996ZM29.818 3.83C29.4593 4.83075 28.8665 5.82081 28.5231 6.16419L12.3675 22.3199L12.018 28.2869L11.5307 28.7742L9.26806 24.0919L10.9001 22.4598L9.57263 21.1323L7.94325 22.7616L3.25856 20.5011L3.74531 20.0144L9.71231 19.6649L25.868 3.50912C26.2114 3.16569 27.2015 2.57306 28.2022 2.21425C29.3382 1.807 29.941 1.89012 30.0416 1.99069C30.142 2.09119 30.2253 2.69381 29.818 3.83Z" fill="#666666"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_838_1177">
+                        <rect width="32" height="32" fill="white"/>
+                        </clipPath>
+                        </defs>
+                      </svg> 
+                      <!-- icon ends -->
+                      <select class="form-select appearance-none
+                        block
+                        w-full
+                        pl-10
+                        py-1.5
+                        text-xxs
+                        font-normal
+                        bg-light-gray bg-clip-padding bg-no-repeat
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:outline-none" aria-label="Default select example">
+                          <option selected>Eg: Kathmandu</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-full md:w-1/2 px-3">
+                  <label class="text-xxs mb-2" for="to">
+                    To
+                  </label>
+
+                  <div class="flex justify-center mt-1">
+                    <div class="mb-3 xl:w-96 w-full relative">
+                      <!-- icon -->
+                      <svg class="h-3 w-3 absolute top-10 left-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_838_1203)">
+                        <path d="M31.3373 31.3691C32.0975 30.6089 32.1722 29.2951 31.5536 27.5687C31.1279 26.3815 30.4147 25.1363 29.8189 24.5405L25.0346 19.7561L27.5082 4.00725L23.5009 -3.70119e-07L18.3722 13.0938L14.1681 8.88969L13.8187 2.92269L10.9575 0.0614991L7.83287 6.53706L6.01874 4.72294L4.69124 6.05044L6.50293 7.86212L0.0304332 10.9898L2.89099 13.8503L8.85799 14.1998L13.1327 18.4745L0.0414952 23.6022L4.04874 27.6094L19.7946 25.1362L24.509 29.8506C25.1047 30.4464 26.3499 31.1597 27.5372 31.5853C29.2631 32.204 30.5772 32.1292 31.3373 31.3691ZM24.2024 3.35662L25.5053 4.6595L23.3921 18.1138L19.8211 14.5427L24.2024 3.35662ZM4.70087 25.6066L3.39799 24.3037L14.5814 19.9233L18.1519 23.4938L4.70087 25.6066ZM28.1705 29.818C27.1697 29.4593 26.1797 28.8665 25.8363 28.5231L9.68055 12.3675L3.71356 12.018L3.22624 11.5307L7.90862 9.26806L9.54068 10.9001L10.8682 9.57262L9.23893 7.94325L11.4994 3.25856L11.9861 3.74531L12.3356 9.71231L28.4914 25.868C28.8348 26.2114 29.4274 27.2015 29.7862 28.2022C30.1935 29.3382 30.1104 29.941 30.0098 30.0416C29.9093 30.142 29.3067 30.2253 28.1705 29.818Z" fill="#666666"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_838_1203">
+                        <rect width="32" height="32" fill="white" transform="translate(32) rotate(90)"/>
+                        </clipPath>
+                        </defs>
+                      </svg> 
+                      <!-- icon ends -->
+                      <select class="form-select appearance-none
+                        block
+                        w-full
+                        pl-10
+                        py-1.5
+                        text-xxs
+                        font-normal
+                        bg-light-gray bg-clip-padding bg-no-repeat
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:outline-none" aria-label="Default select example">
+                          <option selected>Eg: Dharan</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-2 mb-6">
+                <label class="block text-xxs" for="departure">
+                    Departure
+                </label>
+                <input class="appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-light-gray text-xxs" id="departure" type="date">
+              </div>
+
+              <div class="flex">
+                <div class="mb-3 w-full">
+                  <select class="form-select appearance-none
+                    block
+                    w-full
+                    px-3
+                    py-1.5
+                    text-xxs
+                    font-normal
+                    text-gray-700
+                    bg-light-gray bg-clip-padding bg-no-repeat
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:outline-none" aria-label="Default select example">
+                      <option selected>1 Traveller</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+            <!-- form here ends -->
+            </div>
+
+            <div class="tab-pane fade" id="tabs-profile3" role="tabpanel" aria-labelledby="tabs-profile-tab3">
+              <!-- second tab -->
+                <!-- form starts here -->
+                <form class="text-light-black">
+                  <div class="flex flex-wrap -mx-3">
+                    <div class="w-full md:w-1/2 px-3 md:mb-0">
+                      <label class="text-xxs mb-2 text-light-black" for="from">
+                        From
+                      </label>
+
+                      <div class="flex justify-center mt-1 text-light-black">
+                        <div class="mb-3 xl:w-96 w-full relative">
+                          <!-- icon -->
+                          <svg class="h-3 w-3 absolute top-10 left-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_838_1177)">
+                            <path d="M31.3691 0.663186C30.6089 -0.0970015 29.2951 -0.171751 27.5687 0.446936C26.3815 0.872561 25.1363 1.58581 24.5405 2.18156L19.7561 6.96593L4.00725 4.49231L0 8.49956L13.0938 13.6282L8.88969 17.8324L2.92269 18.1818L0.0615 21.043L6.53706 24.1676L4.72294 25.9817L6.05044 27.3092L7.86212 25.4976L10.9898 31.9701L13.8503 29.1095L14.1998 23.1425L18.4745 18.8678L23.6022 31.959L27.6094 27.9517L25.1362 12.2059L29.8506 7.4915C30.4464 6.89581 31.1597 5.65056 31.5853 4.46331C32.204 2.73744 32.1292 1.42325 31.3691 0.663186ZM3.35663 7.79806L4.6595 6.49518L18.1138 8.60837L14.5428 12.1794L3.35663 7.79806ZM25.6066 27.2996L24.3037 28.6025L19.9233 17.4191L23.4938 13.8486L25.6066 27.2996ZM29.818 3.83C29.4593 4.83075 28.8665 5.82081 28.5231 6.16419L12.3675 22.3199L12.018 28.2869L11.5307 28.7742L9.26806 24.0919L10.9001 22.4598L9.57263 21.1323L7.94325 22.7616L3.25856 20.5011L3.74531 20.0144L9.71231 19.6649L25.868 3.50912C26.2114 3.16569 27.2015 2.57306 28.2022 2.21425C29.3382 1.807 29.941 1.89012 30.0416 1.99069C30.142 2.09119 30.2253 2.69381 29.818 3.83Z" fill="#666666"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_838_1177">
+                            <rect width="32" height="32" fill="white"/>
+                            </clipPath>
+                            </defs>
+                          </svg> 
+                          <!-- icon ends -->
+                          <select class="form-select appearance-none
+                            block
+                            w-full
+                            pl-10
+                            py-1.5
+                            text-xxs
+                            font-normal
+                            bg-light-gray bg-clip-padding bg-no-repeat
+                            rounded
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:outline-none" aria-label="Default select example">
+                              <option selected>Eg: Kathmandu</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 px-3">
+                      <label class="text-xxs mb-2" for="to">
+                        To
+                      </label>
+
+                      <div class="flex justify-center mt-1">
+                        <div class="mb-3 xl:w-96 w-full relative">
+                          <!-- icon -->
+                          <svg class="h-3 w-3 absolute top-10 left-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_838_1203)">
+                            <path d="M31.3373 31.3691C32.0975 30.6089 32.1722 29.2951 31.5536 27.5687C31.1279 26.3815 30.4147 25.1363 29.8189 24.5405L25.0346 19.7561L27.5082 4.00725L23.5009 -3.70119e-07L18.3722 13.0938L14.1681 8.88969L13.8187 2.92269L10.9575 0.0614991L7.83287 6.53706L6.01874 4.72294L4.69124 6.05044L6.50293 7.86212L0.0304332 10.9898L2.89099 13.8503L8.85799 14.1998L13.1327 18.4745L0.0414952 23.6022L4.04874 27.6094L19.7946 25.1362L24.509 29.8506C25.1047 30.4464 26.3499 31.1597 27.5372 31.5853C29.2631 32.204 30.5772 32.1292 31.3373 31.3691ZM24.2024 3.35662L25.5053 4.6595L23.3921 18.1138L19.8211 14.5427L24.2024 3.35662ZM4.70087 25.6066L3.39799 24.3037L14.5814 19.9233L18.1519 23.4938L4.70087 25.6066ZM28.1705 29.818C27.1697 29.4593 26.1797 28.8665 25.8363 28.5231L9.68055 12.3675L3.71356 12.018L3.22624 11.5307L7.90862 9.26806L9.54068 10.9001L10.8682 9.57262L9.23893 7.94325L11.4994 3.25856L11.9861 3.74531L12.3356 9.71231L28.4914 25.868C28.8348 26.2114 29.4274 27.2015 29.7862 28.2022C30.1935 29.3382 30.1104 29.941 30.0098 30.0416C29.9093 30.142 29.3067 30.2253 28.1705 29.818Z" fill="#666666"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_838_1203">
+                            <rect width="32" height="32" fill="white" transform="translate(32) rotate(90)"/>
+                            </clipPath>
+                            </defs>
+                          </svg> 
+                          <!-- icon ends -->
+                          <select class="form-select appearance-none
+                            block
+                            w-full
+                            pl-10
+                            py-1.5
+                            text-xxs
+                            font-normal
+                            bg-light-gray bg-clip-padding bg-no-repeat
+                            rounded
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:outline-none" aria-label="Default select example">
+                              <option selected>Eg: Dharan</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="mt-2 mb-6">
+                    <label class="block text-xxs" for="departure">
+                        Departure
+                    </label>
+                    <input class="appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-light-gray text-xxs" id="departure" type="date">
+                  </div>
+
+                  <div class="mt-2 mb-6">
+                    <label class="block text-xxs" for="departure">
+                        Return
+                    </label>
+                    <input class="appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-light-gray text-xxs" id="departure" type="date">
+                  </div>
+
+                  <div class="flex">
+                    <div class="mb-3 w-full">
+                      <select class="form-select appearance-none
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-xxs
+                        font-normal
+                        text-gray-700
+                        bg-light-gray bg-clip-padding bg-no-repeat
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:outline-none" aria-label="Default select example">
+                          <option selected>1 Traveller</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </form>
+                <!-- form here ends -->
+            </div>
+            <div class="tab-pane fade" id="tabs-messages3" role="tabpanel" aria-labelledby="tabs-profile-tab3">
+              <!-- thrd tab-->
+              <!-- form starts here -->
+            <form class="text-light-black">
+              <div class="flex flex-wrap -mx-3">
+                <div class="w-full md:w-1/2 px-3 md:mb-0">
+                  <label class="text-xxs mb-2 text-light-black" for="from">
+                    From
+                  </label>
+
+                  <div class="flex justify-center mt-1 text-light-black">
+                    <div class="mb-3 xl:w-96 w-full relative">
+                      <!-- icon -->
+                      <svg class="h-3 w-3 absolute top-10 left-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_838_1177)">
+                        <path d="M31.3691 0.663186C30.6089 -0.0970015 29.2951 -0.171751 27.5687 0.446936C26.3815 0.872561 25.1363 1.58581 24.5405 2.18156L19.7561 6.96593L4.00725 4.49231L0 8.49956L13.0938 13.6282L8.88969 17.8324L2.92269 18.1818L0.0615 21.043L6.53706 24.1676L4.72294 25.9817L6.05044 27.3092L7.86212 25.4976L10.9898 31.9701L13.8503 29.1095L14.1998 23.1425L18.4745 18.8678L23.6022 31.959L27.6094 27.9517L25.1362 12.2059L29.8506 7.4915C30.4464 6.89581 31.1597 5.65056 31.5853 4.46331C32.204 2.73744 32.1292 1.42325 31.3691 0.663186ZM3.35663 7.79806L4.6595 6.49518L18.1138 8.60837L14.5428 12.1794L3.35663 7.79806ZM25.6066 27.2996L24.3037 28.6025L19.9233 17.4191L23.4938 13.8486L25.6066 27.2996ZM29.818 3.83C29.4593 4.83075 28.8665 5.82081 28.5231 6.16419L12.3675 22.3199L12.018 28.2869L11.5307 28.7742L9.26806 24.0919L10.9001 22.4598L9.57263 21.1323L7.94325 22.7616L3.25856 20.5011L3.74531 20.0144L9.71231 19.6649L25.868 3.50912C26.2114 3.16569 27.2015 2.57306 28.2022 2.21425C29.3382 1.807 29.941 1.89012 30.0416 1.99069C30.142 2.09119 30.2253 2.69381 29.818 3.83Z" fill="#666666"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_838_1177">
+                        <rect width="32" height="32" fill="white"/>
+                        </clipPath>
+                        </defs>
+                      </svg> 
+                      <!-- icon ends -->
+                      <select class="form-select appearance-none
+                        block
+                        w-full
+                        pl-10
+                        py-1.5
+                        text-xxs
+                        font-normal
+                        bg-light-gray bg-clip-padding bg-no-repeat
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:outline-none" aria-label="Default select example">
+                          <option selected>Eg: Kathmandu</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-full md:w-1/2 px-3">
+                  <label class="text-xxs mb-2" for="to">
+                    To
+                  </label>
+
+                  <div class="flex justify-center mt-1">
+                    <div class="mb-3 xl:w-96 w-full relative">
+                      <!-- icon -->
+                      <svg class="h-3 w-3 absolute top-10 left-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_838_1203)">
+                        <path d="M31.3373 31.3691C32.0975 30.6089 32.1722 29.2951 31.5536 27.5687C31.1279 26.3815 30.4147 25.1363 29.8189 24.5405L25.0346 19.7561L27.5082 4.00725L23.5009 -3.70119e-07L18.3722 13.0938L14.1681 8.88969L13.8187 2.92269L10.9575 0.0614991L7.83287 6.53706L6.01874 4.72294L4.69124 6.05044L6.50293 7.86212L0.0304332 10.9898L2.89099 13.8503L8.85799 14.1998L13.1327 18.4745L0.0414952 23.6022L4.04874 27.6094L19.7946 25.1362L24.509 29.8506C25.1047 30.4464 26.3499 31.1597 27.5372 31.5853C29.2631 32.204 30.5772 32.1292 31.3373 31.3691ZM24.2024 3.35662L25.5053 4.6595L23.3921 18.1138L19.8211 14.5427L24.2024 3.35662ZM4.70087 25.6066L3.39799 24.3037L14.5814 19.9233L18.1519 23.4938L4.70087 25.6066ZM28.1705 29.818C27.1697 29.4593 26.1797 28.8665 25.8363 28.5231L9.68055 12.3675L3.71356 12.018L3.22624 11.5307L7.90862 9.26806L9.54068 10.9001L10.8682 9.57262L9.23893 7.94325L11.4994 3.25856L11.9861 3.74531L12.3356 9.71231L28.4914 25.868C28.8348 26.2114 29.4274 27.2015 29.7862 28.2022C30.1935 29.3382 30.1104 29.941 30.0098 30.0416C29.9093 30.142 29.3067 30.2253 28.1705 29.818Z" fill="#666666"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_838_1203">
+                        <rect width="32" height="32" fill="white" transform="translate(32) rotate(90)"/>
+                        </clipPath>
+                        </defs>
+                      </svg> 
+                      <!-- icon ends -->
+                      <select class="form-select appearance-none
+                        block
+                        w-full
+                        pl-10
+                        py-1.5
+                        text-xxs
+                        font-normal
+                        bg-light-gray bg-clip-padding bg-no-repeat
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:outline-none" aria-label="Default select example">
+                          <option selected>Eg: Dharan</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-2 mb-6">
+                <label class="block text-xxs" for="departure">
+                    Departure
+                </label>
+                <input class="appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-light-gray text-xxs" id="departure" type="date">
+              </div>
+
+              <div class="flex">
+                <div class="mb-3 w-full">
+                  <select class="form-select appearance-none
+                    block
+                    w-full
+                    px-3
+                    py-1.5
+                    text-xxs
+                    font-normal
+                    text-gray-700
+                    bg-light-gray bg-clip-padding bg-no-repeat
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:outline-none" aria-label="Default select example">
+                      <option selected>1 Traveller</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+            <!-- form here ends -->
+            </div>
+          </div>
+        </div>
+        <!-- tabs ends -->
+        <!-- buttons -->
+        <div class="action-btn flex flex-wrap row-gap-4 items-center justify-between mt-6">
+          <button class="bg-maroon text-xxs text-white font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline proceed-btn" type="button">
+              Proceed
+          </button> 
+
+          <button class="text-xxs font-bold py-2 px-10 rounded focus:outline-none focus:shadow-outline text-maroon border border-maroon" type="button">
+              Clear
+          </button> 
+      </div>
+        <!-- buttons ends-->
+    </div>
+    <!-- topup content ends -->
+
+    <!-- Deals section -->
+    <div class="bus-deals hidden shadow-md pt-10 pb-5 px-10 rounded bg-white my-8 w-4/5 max-w-xl mx-auto">
+      <div class="flex gap-x-3 mb-4">
+          <span class="v-line bg-maroon"></span>
+          <h5 class="main-text font-bold text-maroon sm:text-md">Best Deals</h5>
+      </div>
+
+      <div class="py-6  grid space-y-4">
+        <!-- 1 -->
+        <div class="flex flex-wrap items-center shadow-sm px-4 py-6 md-sm:justify-between">
+          <img src="./img/esw.png" alt="esewa logo" class="h-20 w-20 object-contain">
+          <div class="text-xxs xs:ml-auto md-sm:ml-0 md-sm:flex md-sm:items-center md-sm:w-4/5 md-sm:justify-between">
+            <p class="text-light-black">Cashback: <span class="text-maroon">Rs. 3</span></p>
+            <p class="text-light-black py-1 md-sm:py-0">Mahal Offer: <span class="text-maroon">10 TP</span></p>
+            <a href="#" class="bg-maroon text-white block py-2 text-center px-4">Recharge</a>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="flex flex-wrap items-center shadow-sm px-4 py-6 md-sm:justify-between">
+          <img src="./img/khlt.png" alt="esewa logo" class="h-20 w-20 object-contain">
+          <div class="text-xxs xs:ml-auto md-sm:ml-0 md-sm:flex md-sm:items-center md-sm:w-4/5 md-sm:justify-between">
+            <p class="text-light-black">Cashback: <span class="text-maroon">Rs. 3</span></p>
+            <p class="text-light-black py-1 md-sm:py-0">Mahal Offer: <span class="text-maroon">10 TP</span></p>
+            <a href="#" class="bg-maroon text-white block py-2 text-center px-4">Recharge</a>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="flex flex-wrap items-center shadow-sm px-4 py-6 md-sm:justify-between">
+          <img src="./img/ime.png" alt="esewa logo" class="h-12 w-12 object-contain">
+          <div class="text-xxs xs:ml-auto md-sm:ml-0 md-sm:flex md-sm:items-center md-sm:w-4/5 md-sm:justify-between">
+            <p class="text-light-black">Cashback: <span class="text-maroon">Rs. 3</span></p>
+            <p class="text-light-black py-1 md-sm:py-0">Mahal Offer: <span class="text-maroon">10 TP</span></p>
+            <a href="#" class="bg-maroon text-white block py-2 text-center px-4">Recharge</a>
+          </div>
+        </div>
+  
+       <div class="text-xxs border border-maroon bg-white hover:bg-maroon hover:text-white text-center py-2 text-maroon w-32 mx-auto">
+         <button>Load More</button>
+      </div>
+      </div>    
+    </div>
+    <!-- Deals section ends -->
+
+    <!-- footer -->
+    <div class="py-10 px-5 sm:px-8 bg-dark-blue text-white">
+        <div class="flex flex-col gap-4 xs:flex-row xs:justify-between xs:flex-wrap space-y-6 md:space-y-0">
+            <!-- one -->
+            <div class="">
+                <img src="./img/logo.png" alt="this is the logo here" class="xs:w-48">
+                <p class="py-4 text-xxs md:max-w-xs tracking-wider">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using making it look like readable English.
+                </p>
+                <div class="flex space-x-4">
+                    <div class="icon hover:bg-fb transition duration-500 ease-in-out"><i class="fab fa-facebook-f"></i></div>                  
+                    <div class="icon hover:bg-insta transition duration-500 ease-in-out"><i class="fab fa-instagram"></i></div>
+                    <div class="icon hover:bg-twitter transition duration-500 ease-in-out"><i class="fab fa-twitter"></i></div>
+                    <div class="icon hover:bg-yt transition duration-500 ease-in-out"><i class="fab fa-youtube"></i></div>
+                </div>
+            </div>
+
+            <!-- two -->
+            <div class="grid space-y-4 xs:rounded md:flex-none">
+                <h3 class="font-extrabold text-md">Useful Links</h3>
+                <div class="flex gap-x-3 group">
+                    <span class="v-line bg-white group-hover:bg-maroon"></span>
+                    <a href="#!" class="text-xxs group-hover:text-maroon">About Us</a>
+                </div>
+                <div class="flex gap-x-3 group">
+                    <span class="v-line bg-white group-hover:bg-maroon"></span>
+                    <a href="#!" class="text-xxs group-hover:text-maroon">Send Money</a>
+                </div>
+                <div class="flex gap-x-3 group">
+                    <span class="v-line bg-white group-hover:bg-maroon"></span>
+                    <a href="#!" class="text-xxs group-hover:text-maroon">Refer & Earn</a>
+                </div>
+                <div class="flex gap-x-3 group">
+                    <span class="v-line bg-white group-hover:bg-maroon"></span>
+                    <a href="#!" class="text-xxs group-hover:text-maroon">Privacy Policy</a>
+                </div>
+                <div class="flex gap-x-3 group">
+                    <span class="v-line bg-white group-hover:bg-maroon"></span>
+                    <a href="#!" class="text-xxs group-hover:text-maroon">Terms & Conditions</a>
+                </div>
+            </div>
+
+            <!-- three -->
+            <div class="grid space-y-4 xs:rounded md:flex-none">
+                <h3 class="font-extrabold text-md">Contact Us</h3>
+                <div class="flex items-center col-gap-3">
+                    <i class="far fa-clock"></i>
+                    <span class="text-xxs">Sun - Fri, 09:00AM - 06:00PM</span>
+                </div>
+                <div class="flex items-center col-gap-3">
+                    <svg class="h-4 w-4" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_782_36)">
+                        <path d="M25.7533 18.3788C24.039 18.3788 22.3558 18.1107 20.7608 17.5836C19.9655 17.3124 19.0601 17.5228 18.5413 18.0515L15.393 20.4281C11.7418 18.4791 9.4928 16.2308 7.57043 12.6071L9.87714 9.54078C10.4764 8.94228 10.6914 8.06801 10.4339 7.2477C9.90449 5.64426 9.63557 3.96185 9.63557 2.24685C9.63565 1.00793 8.62772 0 7.38886 0H2.24671C1.00793 0 0 1.00793 0 2.24671C0 16.4473 11.5528 28 25.7533 28C26.9921 28 28.0001 26.9921 28.0001 25.7532V20.6255C28 19.3867 26.9921 18.3788 25.7533 18.3788ZM26.4445 25.7533C26.4445 26.1346 26.1346 26.4445 25.7533 26.4445C12.4103 26.4445 1.5556 15.5897 1.5556 2.24678C1.5556 1.8655 1.8655 1.5556 2.24678 1.5556H7.38894C7.77022 1.5556 8.08011 1.8655 8.08011 2.24678C8.08011 4.12818 8.37557 5.97465 8.95358 7.72392C9.03408 7.98219 8.96875 8.2495 8.70749 8.52148L6.03385 12.0624C5.85462 12.3001 5.82648 12.6184 5.96094 12.8834C8.14311 17.1726 10.7947 19.8242 15.1142 22.0375C15.377 22.175 15.6991 22.1462 15.9376 21.9661L19.5599 19.2219C19.7429 19.0389 20.0172 18.9736 20.2648 19.0579C22.0262 19.6397 23.8726 19.9344 25.7533 19.9344C26.1346 19.9344 26.4445 20.2443 26.4445 20.6256V25.7533Z"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_782_36">
+                        <rect width="28" height="28"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <span class="text-xxs">+977-1234567898</span>
+                </div>
+                <div class="flex items-center col-gap-3">
+                    <i class="far fa-envelope"></i>
+                    <span class="text-xxs">mahal@support.com</span>
+                </div>
+                <div class="flex items-center col-gap-3">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="text-xxs">Dhangadhi, Nepal</span>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <!-- footer ends -->
+
+  <!-- copyright -->
+    <div class="text-center bg-maroon text-white py-4">
+        <p class="text-xxs">&copy; Copyright <span class="year"></span> All Rights Reserved by <a href="https://view9.com.np/" class="underline">View9</a> </p>
+    </div>
+
+    <!-- tailwind elements js-->
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+    <!-- custom js -->
+    <script>
+      const proceedBtn = document.querySelector('.proceed-btn');
+      const busDeals = document.querySelector('.bus-deals');
+      const actionBtn = document.querySelector('.action-btn')
+
+      proceedBtn.addEventListener('click', function() {
+        busDeals.classList.remove('hidden');
+        actionBtn.classList.add('hidden')
+      });
+    </script>
+
+</body>
+</html>
